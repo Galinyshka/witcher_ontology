@@ -14,6 +14,14 @@ def get_html(page_name:str):
     data = r.json()
     html = data["parse"]["text"]["*"]
     soup = BeautifulSoup(html, "html.parser")
+
+    redirect_block = soup.find("div", class_="redirectMsg")
+    if redirect_block:
+        link = redirect_block.find("a")
+        if link and link.get("title"):
+            new_page = link["title"]
+            print(f"Redirected from '{page_name}' → '{new_page}'")
+            return get_html(new_page)
     return soup
 
 def remove_tags(soup, name:str):
@@ -64,7 +72,7 @@ def parse_characters_dict(books):
 
         inner = soup.find('span', id='Characters')
         if inner:
-            inner = inner.parent.find_next_sibling('div', {'class':'listfix'})
+            inner = inner.parent.find_next_sibling('div', {'class':'listfix'}) or inner.parent.find_next_sibling('ul')
         if not inner:
             continue
 
@@ -76,36 +84,63 @@ def parse_characters_dict(books):
 
     return dict(characters_dict)
 
+def parse_characters_list(books:list):
+    characters = []
 
-def parse_character(soup):
-    infobox = soup.find("aside", class_="portable-infobox")
-    if not infobox:
-        return None
-    remove_tags(infobox, ["sup"])
+    for book in books:
+        soup = get_html(book)
+        if not soup:
+            continue
 
-    data = {}
+        inner = soup.find('span', id='Characters')
+        if inner:
+            inner = inner.parent.find_next_sibling('div', {'class':'listfix'}) or inner.parent.find_next_sibling('ul')
+        if not inner:
+            continue
 
-    name_tag = infobox.find("h2", {"data-source": "name"})
-    data["name"] = name_tag.get_text(strip=True) if name_tag else None
+        for el in inner.find_all('li'):
+            character = el.get_text(strip=True)
+            if character not in characters:
+                characters.append(character)
+                
+    return characters
 
-    born_tag = infobox.find("a", {"title": "Timeline"})
-    data["born"] = int(born_tag.get_text(strip=True)) if born_tag else None
+def parse_character(characters:list) -> list:
+    characters_info = []
+    for character in characters:
+        data = {}
+        data['character'] = character
+        soup = get_html(character)
+        if not soup:
+            continue
 
-    nationality_block = infobox.find("div", {"data-source": "nationality"})
-    if nationality_block:
-        nationality_link = nationality_block.find("a")
-        if nationality_link and nationality_link.get("title"):
-            data['nationality'] = nationality_link["title"]
-        else:
+        infobox = soup.find("aside", class_="portable-infobox")
+        if not infobox:
+            return None
+        remove_tags(infobox, ["sup"])
+
+        name_tag = infobox.find("h2", {"data-source": "name"})
+        data["full name"] = name_tag.get_text(strip=True) if name_tag else None
+
+        born_tag = infobox.find("a", {"title": "Timeline"})
+        data["born"] = int(born_tag.get_text(strip=True)) if born_tag else None
+
+        nationality_block = infobox.find("div", {"data-source": "nationality"})
+        if nationality_block:
+            nationality_link = nationality_block.find("a")
+            if nationality_link and nationality_link.get("title"):
+                data['nationality'] = nationality_link["title"]
+            else:
+                data['nationality'] = None
+        else: 
             data['nationality'] = None
-    else: 
-        data['nationality'] = None
 
-    for key in ["hair_color", "eye_color", "race", "gender", "status"]:
-        data[key] = extract_text(infobox.find("div", {"data-source": key}))
+        for key in ["hair_color", "eye_color", "race", "gender", "status"]:
+            data[key] = extract_text(infobox.find("div", {"data-source": key}))
 
-    for key in ["titles", "profession", "affiliation", "abilities", "appears_books", "appears_games"]:
-        data[key] = extract_list(infobox.find("div", {"data-source": key}))
-    
+        for key in ["titles", "profession", "affiliations", "abilities", "appears_books", "appears_games"]:
+            data[key] = extract_list(infobox.find("div", {"data-source": key}))
 
-    return data
+        characters_info.append(data)
+
+    return characters_info
