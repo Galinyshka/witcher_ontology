@@ -1,109 +1,111 @@
-def sup_decompose(soup):
-    for sup in soup.find_all("sup"):
-        sup.decompose()
+import requests
+from bs4 import BeautifulSoup
+from collections import defaultdict
+
+def get_html(page_name:str):
+    url = "https://witcher.fandom.com/api.php"
+    params = {
+        "action": "parse",
+        "page": page_name,
+        "prop": "text",
+        "format": "json"
+    }
+    r = requests.get(url, params=params)
+    data = r.json()
+    html = data["parse"]["text"]["*"]
+    soup = BeautifulSoup(html, "html.parser")
     return soup
 
-def small_decompose(soup):
-    for small in soup.find_all("small"):
-        small.decompose()
+def remove_tags(soup, name:str):
+    for tag in soup.find_all(name):
+        tag.decompose()
     return soup
 
-def list_pros(soup):
-    result = []
+def extract_text(soup):
+    if not soup:
+        return None
+    inner = soup.find("div") or soup
+    remove_tags(inner, "small")
+    text = inner.contents[0].get_text(strip=True)
+    return text if text else None
+
+def extract_list(soup, remove=True):
+    if not soup:
+        return None
+    inner = soup.find("div") or soup
+    if remove:
+        remove_tags(inner, "small")
+    items = []
     current = []
-
-    # Обходим всех детей, включая текст и теги
-    for elem in soup.children:
+    for elem in inner.children:
         if getattr(elem, "name", None) == "br":
-            # закончили один блок
             text = " ".join(current).strip()
             if text:
-                result.append(text)
+                items.append(text)
             current = []
         else:
-            # собираем текст текущего блока
             if hasattr(elem, "get_text"):
                 current.append(elem.get_text(" ", strip=True))
             elif isinstance(elem, str):
                 current.append(elem.strip())
-
-    # добавляем последний блок
     if current:
         text = " ".join(current).strip()
         if text:
-            result.append(text)
-    return result
+            items.append(text)
+    return items if items else None
 
-    
+def parse_characters_dict(books):
+    characters_dict = defaultdict(list)
+
+    for book in books:
+        soup = get_html(book)
+        if not soup:
+            continue
+
+        inner = soup.find('span', id='Characters')
+        if inner:
+            inner = inner.parent.find_next_sibling('div', {'class':'listfix'})
+        if not inner:
+            continue
+
+        for el in inner.find_all('li'):
+            character = el.get_text(strip=True)
+            if character:
+                if book not in characters_dict[character]:
+                    characters_dict[character].append(book)
+
+    return dict(characters_dict)
+
+
 def parse_character(soup):
-    name = born = nationality = hair_color = eye_color = race = gender = None
-    title = profession = affiliation = ability = book_appear = game_appear = None
-
     infobox = soup.find("aside", class_="portable-infobox")
-    infobox = sup_decompose(infobox)
     if not infobox:
-        return None  
+        return None
+    remove_tags(infobox, ["sup"])
 
-    name_link = infobox.find("h2", {"data-source": "name"})
-    name = name_link.get_text(strip=True) if name_link else None
+    data = {}
 
-    born_link = infobox.find("a", {"title": "Timeline"})
-    born = int(born_link.get_text(strip=True)) if born_link else None
+    name_tag = infobox.find("h2", {"data-source": "name"})
+    data["name"] = name_tag.get_text(strip=True) if name_tag else None
+
+    born_tag = infobox.find("a", {"title": "Timeline"})
+    data["born"] = int(born_tag.get_text(strip=True)) if born_tag else None
 
     nationality_block = infobox.find("div", {"data-source": "nationality"})
     if nationality_block:
         nationality_link = nationality_block.find("a")
         if nationality_link and nationality_link.get("title"):
-            nationality = nationality_link["title"]
+            data['nationality'] = nationality_link["title"]
+        else:
+            data['nationality'] = None
+    else: 
+        data['nationality'] = None
 
-    hair_color_block = infobox.find("div", {"data-source": "hair_color"})
-    if hair_color_block:
-        hair_color_link = small_decompose(hair_color_block.find("div"))
-        hair_color = hair_color_link.get_text(strip=True) if hair_color_link else None
+    for key in ["hair_color", "eye_color", "race", "gender", "status"]:
+        data[key] = extract_text(infobox.find("div", {"data-source": key}))
 
-    eye_color_block = infobox.find("div", {"data-source": "eye_color"})
-    if eye_color_block:
-        eye_color_link = small_decompose(eye_color_block.find("div"))
-        eye_color = eye_color_link.contents[0].get_text(strip=True) if eye_color_link else None
+    for key in ["titles", "profession", "affiliation", "abilities", "appears_books", "appears_games"]:
+        data[key] = extract_list(infobox.find("div", {"data-source": key}))
+    
 
-    race_block = infobox.find("div", {"data-source": "race"})
-    if race_block:
-        race_link = small_decompose(race_block.find("div"))
-        race = race_link.contents[0].get_text(strip=True) if race_link else None
-
-    gender_block = infobox.find("div", {"data-source": "gender"})
-    if gender_block:
-        gender_link = small_decompose(gender_block.find("div"))
-        gender = gender_link.contents[0].get_text(strip=True) if gender_link else None
-
-    title_block = infobox.find("div", {"data-source": "titles"})
-    if title_block:
-        title_link = small_decompose(title_block.find("div"))
-        title = list_pros(title_link) if title_link else None
-
-    profession_block = infobox.find("div", {"data-source": "profession"})
-    if profession_block:
-        profession_link = small_decompose(profession_block.find("div"))
-        profession = list_pros(profession_link) if profession_link else None
-
-    affiliation_block = infobox.find("div", {"data-source": "affiliations"})
-    if affiliation_block:
-        affiliation_link = small_decompose(affiliation_block.find("div"))
-        affiliation = list_pros(affiliation_link) if affiliation_link else None
-
-    ability_block = infobox.find("div", {"data-source": "abilities"})
-    if ability_block:
-        ability_link = small_decompose(ability_block.find("div"))
-        ability = list_pros(ability_link) if ability_link else None
-
-    appearance_block = infobox.find("div", {"data-source": "appears_books"})
-    if appearance_block:
-        appearance_link = small_decompose(appearance_block.find("div"))
-        book_appear = list_pros(appearance_link) if appearance_link else None
-
-    appearance_block = infobox.find("div", {"data-source": "appears_games"})
-    if appearance_block:
-        appearance_link = small_decompose(appearance_block.find("div"))
-        game_appear = list_pros(appearance_link) if appearance_link else None
-
-    return {"name": name, "born": born, "nationality": nationality, "hair_color": hair_color, "eye_color": eye_color, "race": race, "gender": gender, "title": title, "profession": profession, "affiliation": affiliation, "abilities": ability, "book_appear": book_appear, "game_appear": game_appear}
+    return data
