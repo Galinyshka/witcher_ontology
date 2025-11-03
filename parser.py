@@ -2,16 +2,25 @@ import requests
 from bs4 import BeautifulSoup
 from collections import defaultdict
 
+BASE_URL = "https://witcher.fandom.com/api.php"
+API_PARAMS = {
+    "action": "parse",
+    "prop": "text", 
+    "format": "json"
+}
+
 def get_html(page_name:str):
-    url = "https://witcher.fandom.com/api.php"
-    params = {
-        "action": "parse",
-        "page": page_name,
-        "prop": "text",
-        "format": "json"
-    }
-    r = requests.get(url, params=params)
+    ''' Получение HTML по названию'''
+
+    params = API_PARAMS.copy()
+    params["page"] = page_name
+
+    r = requests.get(BASE_URL, params=params)
     data = r.json()
+    if 'error' in data:
+        print(f"'{page_name}' error: {data['error']['info']}")
+        return None
+    
     html = data["parse"]["text"]["*"]
     soup = BeautifulSoup(html, "html.parser")
 
@@ -22,6 +31,8 @@ def get_html(page_name:str):
             new_page = link["title"]
             print(f"Redirected from '{page_name}' → '{new_page}'")
             return get_html(new_page)
+        
+    print(f"Page '{page_name}' parsed.")
     return soup
 
 def remove_tags(soup, name:str):
@@ -38,7 +49,7 @@ def extract_text(soup):
     return text if text else None
 
 def extract_list(soup, remove=True):
-    if not soup:
+    if not soup or not soup.contents:
         return None
     inner = soup.find("div") or soup
     if remove:
@@ -62,29 +73,9 @@ def extract_list(soup, remove=True):
             items.append(text)
     return items if items else None
 
-def parse_characters_dict(books):
-    characters_dict = defaultdict(list)
-
-    for book in books:
-        soup = get_html(book)
-        if not soup:
-            continue
-
-        inner = soup.find('span', id='Characters')
-        if inner:
-            inner = inner.parent.find_next_sibling('div', {'class':'listfix'}) or inner.parent.find_next_sibling('ul')
-        if not inner:
-            continue
-
-        for el in inner.find_all('li'):
-            character = el.get_text(strip=True)
-            if character:
-                if book not in characters_dict[character]:
-                    characters_dict[character].append(book)
-
-    return dict(characters_dict)
-
 def parse_characters_list(books:list):
+    ''' Парсинг списка персонажей по основным персонажам книг'''
+
     characters = []
 
     for book in books:
@@ -106,6 +97,8 @@ def parse_characters_list(books:list):
     return characters
 
 def parse_character(characters:list) -> list:
+    ''' Парсинг подробной информации для персонажа'''
+
     characters_info = []
     for character in characters:
         data = {}
@@ -116,7 +109,7 @@ def parse_character(characters:list) -> list:
 
         infobox = soup.find("aside", class_="portable-infobox")
         if not infobox:
-            return None
+            continue
         remove_tags(infobox, ["sup"])
 
         name_tag = infobox.find("h2", {"data-source": "name"})
@@ -144,3 +137,34 @@ def parse_character(characters:list) -> list:
         characters_info.append(data)
 
     return characters_info
+
+
+def parse_organisation(organisations:list):
+    ''' Парсинг подробной информации для организации'''
+
+    organisations_info = []
+    for organisation in organisations:
+        data = {}
+        data['organisation'] = organisation
+        soup = get_html(organisation)
+        if not soup:
+            continue
+
+        infobox = soup.find("aside", class_="portable-infobox")
+        if not infobox:
+            continue
+        remove_tags(infobox, ["sup"])
+
+        name_tag = infobox.find("h2", {"data-source": "name"})
+        data["full name"] = name_tag.get_text(strip=True) if name_tag else None
+
+        for key in ["gender", "status", "area served", "country"]:
+            data[key] = extract_text(infobox.find("div", {"data-source": key}))
+
+        for key in ["type", "purpose", "founder", "leader", "members", "headquarters", "appears_books", "appears_games"]:
+            data[key] = extract_list(infobox.find("div", {"data-source": key}))
+
+        if not data['gender']:
+            organisations_info.append(data)
+
+    return organisations_info

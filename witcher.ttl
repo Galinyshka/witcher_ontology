@@ -1,0 +1,238 @@
+@prefix : <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/> .
+
+<http://www.semanticweb.org/220941/ontologies/2025/10/witcher> rdf:type owl:Ontology ;
+                                                                rdfs:comment "Witcher characters ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasFounder
+:hasFounder rdf:type owl:ObjectProperty ;
+            rdfs:domain :Organisation ;
+            rdfs:range :Character ;
+            owl:inverseOf :foundedBy ;
+            rdfs:label "has founder"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#foundedBy
+:foundedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Character ;
+           rdfs:range :Organisation ;
+           owl:inverseOf :hasFounder ;
+           rdfs:label "founded by"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasLeader
+:hasLeader rdf:type owl:ObjectProperty ;
+           rdfs:domain :Organisation ;
+           rdfs:range :Character, :Organisation ;
+           owl:inverseOf :ledBy ;
+           rdfs:label "has leader"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#ledBy
+:ledBy rdf:type owl:ObjectProperty ;
+       rdfs:domain :Character, :Organisation ;
+       rdfs:range :Organisation ;
+       owl:inverseOf :hasLeader ;
+       rdfs:label "led by"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasOrganisation
+:hasOrganisation rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Book , :Game ;
+                 rdfs:range :Organisation ;
+                 owl:inverseOf :appearsInOrg ;
+                 rdfs:label "has organisation"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#appearsInOrg 
+:appearsInOrg rdf:type owl:ObjectProperty ;
+              rdfs:domain :Organisation ;
+              rdfs:range :Book , :Game ;
+              owl:inverseOf :hasOrganisation ;
+              rdfs:label "appears in (organisation)"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#inCountry
+:inCountry rdf:type owl:ObjectProperty ;
+           rdfs:domain :Organisation ;
+           rdfs:range :Country ;
+           rdfs:label "in country"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#appearsIn 
+:appearsIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Character ;
+           rdfs:range :Book , :Game ;
+           owl:inverseOf :hasCharacter ;
+           rdfs:label "appears in"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasAffiliation
+:hasAffiliation rdf:type owl:ObjectProperty ;
+                rdfs:domain :Character ;
+                rdfs:range :Organisation ;
+                owl:inverseOf :hasMember ;
+                rdfs:label "has affiliation"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasCharacter
+:hasCharacter rdf:type owl:ObjectProperty ;
+              rdfs:domain :Book , :Game ;
+              rdfs:range :Character ;
+              owl:inverseOf :appearsIn ;
+              rdfs:label "has character"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           rdfs:domain :Organisation ;
+           rdfs:range :Character ;
+           owl:inverseOf :hasAffiliation ;
+           rdfs:label "has member"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasNationality
+:hasNationality rdf:type owl:ObjectProperty ;
+                rdfs:domain :Character ;
+                rdfs:range :Nationality ;
+                rdfs:label "has nationality"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasRace
+:hasRace rdf:type owl:ObjectProperty ;
+         rdfs:domain :Character ;
+         rdfs:range :Race ;
+         rdfs:label "has race"@en .
+
+#################################################################
+#    Data properties
+#################################################################
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasProfession
+:hasProfession rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Character ;
+               rdfs:range xsd:string ;
+               rdfs:label "Profession"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasPurpose
+:hasPurpose rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Organisation ;
+            rdfs:range xsd:string ;
+            rdfs:label "Purpose"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasStatus
+:hasStatus rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Organisation ;
+           rdfs:range xsd:string ;
+           rdfs:label "Status"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasType
+:hasType rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Organisation ;
+         rdfs:range xsd:string ;
+         rdfs:label "Type"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasAbility
+:hasAbility rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Character ;
+            rdfs:range xsd:string ;
+            rdfs:label "Ability"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasEyeColor
+:hasEyeColor rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Character ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The color of the character's eyes"@en ;
+             rdfs:label "Eye color"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasFullName
+:hasFullName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Character ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The full name of the character"@en ;
+             rdfs:label "Full name"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasGender
+:hasGender rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Character ;
+           rdfs:range xsd:string ;
+           rdfs:comment "The gender of the character"@en ;
+           rdfs:label "Gender"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasHairColor
+:hasHairColor rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Character ;
+              rdfs:range xsd:string ;
+              rdfs:comment "The color of the character's hair"@en ;
+              rdfs:label "Hair color"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Character ;
+          rdfs:range xsd:string ;
+          rdfs:label "Title"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#isAlive
+:isAlive rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Character ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "Shows if the character is dead or alive"@en ;
+         rdfs:label "Alive status"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#releaseYear
+:releaseYear rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Book , :Game ;
+             rdfs:range xsd:gyear ;
+             rdfs:comment "The year when the book or game was released"@en ;
+             rdfs:label "Release year"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Country
+:Country rdf:type owl:Class ;
+         rdfs:label "Country"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Secret_service
+:Secret_service rdf:type owl:Class ;
+                rdfs:subClassOf :Organisation ;
+                rdfs:label "Secret service"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Settlement
+:Settlement rdf:type owl:Class ;
+            rdfs:comment "All settlements (e.g. cities, towns, castles)"@en ;
+            rdfs:label "Settlement"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Witcher_school
+:Witcher_school rdf:type owl:Class ;
+                rdfs:subClassOf :Organisation ;
+                rdfs:label "Witcher school"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Book
+:Book rdf:type owl:Class ;
+      rdfs:comment "A book written by Andrzej Sapkowski"@en ;
+      rdfs:label "Book"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Character
+:Character rdf:type owl:Class ;
+           rdfs:comment "A main character appearing in books"@en ;
+           rdfs:label "Character"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Game
+:Game rdf:type owl:Class ;
+      rdfs:comment "A video game based on the Witcher series"@en ;
+      rdfs:label "Game"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Nationality
+:Nationality rdf:type owl:Class ;
+             rdfs:comment "The origin of the character"@en ;
+             rdfs:label "Nationality"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Organisation
+:Organisation rdf:type owl:Class ;
+              rdfs:comment "A formal or informal group"@en ;
+              rdfs:label "Organisation"@en .
+
+### http://www.semanticweb.org/220941/ontologies/2025/10/witcher#Race
+:Race rdf:type owl:Class ;
+      rdfs:comment "The race of the character"@en ;
+      rdfs:label "Race"@en .
+
