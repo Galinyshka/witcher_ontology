@@ -1,345 +1,342 @@
-@prefix  : <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/> .
+@prefix : <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :appearsIn a owl:ObjectProperty ;
-   owl:inverseOf  :hasCharacter ;
-   rdfs:label "appears in"@en ;
-   rdfs:comment "Links a character to a book or game where they appear"@en .
-
-:appearsInOrg a owl:ObjectProperty ;
-   owl:inverseOf  :hasOrganisation ;
-   rdfs:label "appears in (organisation)"@en ;
-   rdfs:comment "Links an organisation to books or games in which it appears"@en .
-
-:foundedBy a owl:ObjectProperty ;
-   owl:inverseOf  :hasFounder ;
-   rdfs:label "founded by"@en ;
-   rdfs:comment "Links an organisation to its founder character or organisation"@en .
+    rdfs:label "appears in"@en ;
+    rdfs:comment "Links a character to a book or game where they appear"@en ;
+    owl:inverseOf :hasCharacter .
 
 :hasEyeColor a owl:DatatypeProperty ;
-   rdfs:label "eye color"@en ;
-   rdfs:comment "The eye color of a character"@en .
+    rdfs:label "eye color"@en ;
+    rdfs:comment "The eye color of a character"@en .
 
 :hasFullName a owl:DatatypeProperty ;
-   rdfs:label "full name"@en ;
-   rdfs:comment "The full name of a character"@en .
+    rdfs:label "full name"@en ;
+    rdfs:comment "The full name of a character"@en .
 
 :hasGender a owl:DatatypeProperty ;
-   rdfs:label "gender"@en ;
-   rdfs:comment "The gender of a character"@en .
+    rdfs:label "gender"@en ;
+    rdfs:comment "The gender of a character"@en .
 
 :hasHairColor a owl:DatatypeProperty ;
-   rdfs:label "hair color"@en ;
-   rdfs:comment "The hair color of a character"@en .
-
-:hasLeader a owl:ObjectProperty ;
-   owl:inverseOf  :ledBy ;
-   rdfs:label "has leader"@en ;
-   rdfs:comment "Links an organisation to its leader character or organisation"@en .
+    rdfs:label "hair color"@en ;
+    rdfs:comment "The hair color of a character"@en .
 
 :hasProfession a owl:DatatypeProperty ;
-   rdfs:label "profession"@en ;
-   rdfs:comment "The profession of a character"@en .
+    rdfs:label "profession"@en ;
+    rdfs:comment "The profession of a character"@en .
 
 :hasPurpose a owl:DatatypeProperty ;
-   rdfs:label "purpose"@en ;
-   rdfs:comment "The purpose of an organisation"@en .
+    rdfs:label "purpose"@en ;
+    rdfs:comment "The purpose of an organisation"@en .
 
 :hasStatus a owl:DatatypeProperty ;
-   rdfs:label "status"@en ;
-   rdfs:comment "The status of an organisation"@en .
+    rdfs:label "status"@en ;
+    rdfs:comment "The status of an organisation"@en .
 
 :hasType a owl:DatatypeProperty ;
-   rdfs:label "type"@en ;
-   rdfs:comment "The type of an organisation"@en .
+    rdfs:label "type"@en ;
+    rdfs:comment "The type of an organisation"@en .
 
 :inCountry a owl:ObjectProperty ;
-   rdfs:label "in country"@en ;
-   rdfs:comment "Links an organisation to the country"@en .
+    rdfs:label "in country"@en ;
+    rdfs:comment "Links an organisation to the country"@en .
 
 :isAlive a owl:DatatypeProperty ;
-   rdfs:label "alive status"@en ;
-   rdfs:comment "Indicates if the character is alive"@en .
+    rdfs:label "alive status"@en ;
+    rdfs:comment "Indicates if the character is alive"@en .
 
 :releaseYear a owl:DatatypeProperty ;
-   rdfs:label "release year"@en ;
-   rdfs:comment "The year a book or game was released"@en .
+    rdfs:label "release year"@en ;
+    rdfs:comment "The year a book or game was released"@en .
 
 <http://www.semanticweb.org/galinyshka/ontologies/2025/10/witcher-final> a owl:Ontology .
 
-
-:Addario_Bach a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
+:Addario_Bach a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
     :hasFullName "Addarion Bach" ;
     :hasGender "Male" ;
     :hasHairColor "Flaxen" ;
     :hasProfession "Miner, Musician" ;
-    :hasRace  :Dwarf ;
+    :hasRace :Dwarf ;
     :isAlive true .
 
 :Aelirenn a owl:NamedIndividual ;
-    :hasAffiliation  :Francesca_Findabair .
+    :hasAffiliation :Francesca_Findabair .
 
-:Angoulême a  :Character,
-       owl:NamedIndividual ;
+:Angoulême a :Character,
+        owl:NamedIndividual ;
     :hasAffiliation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company> .
 
-:Antea_Derris a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
+:Antea_Derris a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
     :hasFullName "Antea Derris" ;
     :hasGender "Female" ;
     :hasProfession "Thief" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Artamon_of_Asguth a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Crossroads_of_Ravens ;
+:Artamon_of_Asguth a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Crossroads_of_Ravens ;
+    :hasAbility "Magic"^^xsd:string ;
     :hasFullName "Artamon of Asguth" ;
     :hasGender "Male" ;
     :hasProfession "Dean of the Academy of Magic at Ban Ard Academy, Mage" ;
     :isAlive false .
 
-:Azar_Javed a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :Syndicate .
+:Azar_Javed a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :Syndicate .
 
 :Ban_Ard_Academy a owl:NamedIndividual ;
-    :hasAffiliation  :Rience .
+    :hasAffiliation :Rience .
 
-:Barclay_Els a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :Mahakam_Volunteer_Army .
+:Barclay_Els a :Character,
+        owl:NamedIndividual ;
+    :ledBy :Mahakam_Volunteer_Army .
 
-:Carlo_Varese a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :Big_Four .
+:Carlo_Varese a :Character,
+        owl:NamedIndividual ;
+    :ledBy :Big_Four .
 
-:Casimir_de_Lauterpacht a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :Redanian_Secret_Service .
+:Casimir_de_Lauterpacht a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :Redanian_Secret_Service .
 
-:Cervia_Herrada_de_Graffiacane a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Crossroads_of_Ravens ;
+:Cervia_Herrada_de_Graffiacane a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Crossroads_of_Ravens ;
     :hasFullName "Cervia Herrada de Graffiacane" ;
     :hasGender "Female" ;
     :isAlive false .
 
-:Cyprian_Wiley a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :Big_Four .
+:Cyprian_Wiley a :Character,
+        owl:NamedIndividual ;
+    :ledBy :Big_Four .
 
 :Druids_of_Kovirian_Circle a owl:NamedIndividual ;
-    :hasAffiliation  :Vilgefortz .
+    :hasAffiliation :Vilgefortz .
 
-:Egmund a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
+:Egmund a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
     :hasFullName "Egmund" ;
     :hasGender "Male" ;
     :hasHairColor "Black" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
 :Elf a :Race ;
     rdfs:label "Elf"@en .
 
-:Erik_Demartin a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :Redanian_Secret_Service .
+:Erik_Demartin a :Character,
+        owl:NamedIndividual ;
+    :ledBy :Redanian_Secret_Service .
 
-:Erland_of_Larvik a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :School_of_the_Griffin .
+:Erland_of_Larvik a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :School_of_the_Griffin .
 
-:Francis_Bedlam a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :Big_Four .
+:Francis_Bedlam a :Character,
+        owl:NamedIndividual ;
+    :ledBy :Big_Four .
 
-:Frans_Torquil a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
+:Frans_Torquil a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
     :hasFullName "Frans Torquil" ;
     :hasGender "Male" ;
     :hasProfession "Soldier" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Fringilla_Vigo a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :Lodge_of_Sorceresses .
+:Fringilla_Vigo a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :Lodge_of_Sorceresses .
 
-:Gaetan a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :School_of_the_Cat .
+:Gaetan a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :School_of_the_Cat .
 
-:Geoffrey_Monck a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :Brotherhood_of_Sorcerers .
+:Geoffrey_Monck a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :Brotherhood_of_Sorcerers .
 
-:George a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :School_of_the_Griffin .
+:George a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :School_of_the_Griffin .
 
-:Gezras a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :School_of_the_Cat .
+:Gezras a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :School_of_the_Cat .
 
-:Giambattista a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :Brotherhood_of_Sorcerers .
+:Giambattista a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :Brotherhood_of_Sorcerers .
 
 :Guxart a owl:NamedIndividual ;
-    :ledBy  :School_of_the_Cat .
+    :ledBy :School_of_the_Cat .
 
-:Half_elf a  :Race ;
+:Half_elf a :Race ;
     rdfs:label "Hals-elf"@en .
 
 :Hearts_of_Stone_expansion a owl:NamedIndividual ;
-    :hasCharacter  :Shani .
+    :hasCharacter :Shani .
 
-:Higher_vampire a  :Race ;
+:Higher_vampire a :Race ;
     rdfs:label "Higher vampire"@en .
 
 :Holy_Congregation_headed_by_Grandmaster a owl:NamedIndividual ;
-    :ledBy  :Order_of_the_Flaming_Rose .
+    :ledBy :Order_of_the_Flaming_Rose .
 
-:Ida_Emean_aep_Sivney a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :Lodge_of_Sorceresses .
-
-:Jacques_de_Aldersberg a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :Order_of_the_Flaming_Rose .
-
-:Jad_Karadin a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :School_of_the_Cat .
-
-:Jan_Bekker a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :Brotherhood_of_Sorcerers .
-
-:Jerome a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :School_of_the_Griffin .
-
-:Keldar a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :School_of_the_Griffin .
-
-:King__Henselt_of_Kaedwen a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :Sabrina_Glevissig .
-
-:Kiyan a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :School_of_the_Cat .
-
-<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Lyrian-Rivian_Army_White_Queen's_corps> a  :Organisation,
+:Ida_Emean_aep_Sivney a :Character,
         owl:NamedIndividual ;
-     :hasAffiliation  :Meve .
+    :hasAffiliation :Lodge_of_Sorceresses .
+
+:Jacques_de_Aldersberg a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :Order_of_the_Flaming_Rose .
+
+:Jad_Karadin a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :School_of_the_Cat .
+
+:Jan_Bekker a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :Brotherhood_of_Sorcerers .
+
+:Jerome a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :School_of_the_Griffin .
+
+:Keldar a :Character,
+        owl:NamedIndividual ;
+    :ledBy :School_of_the_Griffin .
+
+:King__Henselt_of_Kaedwen a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :Sabrina_Glevissig .
+
+:Kiyan a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :School_of_the_Cat .
+
+<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Lyrian-Rivian_Army_White_Queen's_corps> a :Organisation,
+        owl:NamedIndividual ;
+    :hasAffiliation :Meve .
 
 :Mansfeld a owl:NamedIndividual ;
-    :ledBy  :Kaedwenian_Secret_Service .
+    :ledBy :Kaedwenian_Secret_Service .
 
-<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Melitele_'s_clergy> a  :Organisation,
+<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Melitele_'s_clergy> a :Organisation,
         owl:NamedIndividual ;
-     :hasAffiliation  :Nenneke .
+    :hasAffiliation :Nenneke .
 
-:Milva a  :Character,
-       owl:NamedIndividual ;
+:Milva a :Character,
+        owl:NamedIndividual ;
     :hasAffiliation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company> .
 
-:Myhrman a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves ;
+:Myhrman a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves ;
     :hasFullName "Myhrman" ;
     :hasGender "Male" ;
     :hasProfession "Merchant" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
 :Oxenfurt_Academy a owl:NamedIndividual ;
-    :hasAffiliation  :Shani .
+    :hasAffiliation :Shani .
 
-:Preston_Holt a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Crossroads_of_Ravens ;
+:Preston_Holt a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Crossroads_of_Ravens ;
+    :hasAbility "Superhuman abilities, Swordsmanship, Alchemy, Signs"^^xsd:string ;
     :hasFullName "Preston Holt" ;
     :hasGender "Male" ;
     :hasHairColor "White" ;
     :hasProfession "Witcher" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Pyral_Pratt a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
+:Pyral_Pratt a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
     :hasEyeColor "Yellow" ;
     :hasFullName "Pyral Pratt" ;
     :hasGender "Male" ;
     :hasProfession "Crime boss, Priest" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Raven a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :School_of_the_Griffin .
+:Raven a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :School_of_the_Griffin .
 
-:Roderick_de_Wett a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :Order_of_the_Flaming_Rose .
+:Roderick_de_Wett a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :Order_of_the_Flaming_Rose .
 
 <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Shani's_Clinic> a owl:NamedIndividual ;
-     :hasAffiliation  :Shani .
+    :hasAffiliation :Shani .
 
-:Siegfried_of_Denesle a  :Character,
-       owl:NamedIndividual ;
-    :hasAffiliation  :Order_of_the_Flaming_Rose .
+:Siegfried_of_Denesle a :Character,
+        owl:NamedIndividual ;
+    :hasAffiliation :Order_of_the_Flaming_Rose .
 
-:Temeria a  :Country,
-       owl:NamedIndividual ;
-       rdfs:label "Temeria"@en .
-    
+:Temeria a :Country,
+        owl:NamedIndividual ;
+    rdfs:label "Temeria"@en .
+
 :Temple_of_Melitele a owl:NamedIndividual ;
-    :hasAffiliation  :Jarre .
+    :hasAffiliation :Jarre .
 
-:The_Witcher_Battle_Arena a  :Game,
-       owl:NamedIndividual ;
-    :hasCharacter  :Philippa_Eilhart ;
-    :releaseYear "2015"^^xsd:gYear ;
-    rdfs:label "The Witcher Battle Arena"@en .
+:The_Witcher_Battle_Arena a :Game,
+        owl:NamedIndividual ;
+    rdfs:label "The Witcher Battle Arena"@en ;
+    :hasCharacter :Philippa_Eilhart ;
+    :releaseYear "2015"^^xsd:gYear .
 
-:The_Witcher_IV a  :Game,
-       owl:NamedIndividual ;
-    :hasCharacter  :Ciri ;
-    rdfs:label "The Witcher IV"@en .
+:The_Witcher_IV a :Game,
+        owl:NamedIndividual ;
+    rdfs:label "The Witcher IV"@en ;
+    :hasCharacter :Ciri .
 
-:Tiziana_Frevi a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
+:Tiziana_Frevi a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
+    :hasAbility "Magic"^^xsd:string ;
     :hasFullName "Tiziana Frevi" ;
     :hasGender "Female" ;
     :hasHairColor "Blonde" ;
     :hasProfession "Dwimveandra, Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Treyse a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :School_of_the_Cat .
+:Treyse a :Character,
+        owl:NamedIndividual ;
+    :ledBy :School_of_the_Cat .
 
 :University_of_Oxenfurt a owl:NamedIndividual ;
-    :hasAffiliation  :Dandelion .
+    :hasAffiliation :Dandelion .
+
+:appearsInOrg a owl:ObjectProperty ;
+    rdfs:label "appears in (organisation)"@en ;
+    rdfs:comment "Links an organisation to books or games in which it appears"@en ;
+    owl:inverseOf :hasOrganisation .
+
+:foundedBy a owl:ObjectProperty ;
+    rdfs:label "founded by"@en ;
+    rdfs:comment "Links an organisation to its founder character or organisation"@en ;
+    owl:inverseOf :hasFounder .
 
 :hasAffiliation a owl:ObjectProperty,
-                 owl:SymmetricProperty ;
+        owl:SymmetricProperty ;
     rdfs:label "has affiliation"@en ;
     rdfs:comment "Indicates affiliation between characters and organizations."@en ;
     owl:inverseOf :hasAffiliation .
@@ -353,6 +350,11 @@
     rdfs:comment "Connects an organization to its founder."@en ;
     owl:inverseOf :foundedBy .
 
+:hasLeader a owl:ObjectProperty ;
+    rdfs:label "has leader"@en ;
+    rdfs:comment "Links an organisation to its leader character or organisation"@en ;
+    owl:inverseOf :ledBy .
+
 :hasOrganisation a owl:ObjectProperty ;
     rdfs:label "has organisation"@en ;
     rdfs:comment "Connects a book or game to organizations appearing in it."@en ;
@@ -363,267 +365,270 @@
     rdfs:comment "Connects an organization to its leader."@en ;
     owl:inverseOf :hasLeader .
 
-:Aedirn a  :Country,
-       owl:NamedIndividual ;
-   rdfs:label "Aedirn"@en .
+:Aedirn a :Country,
+        owl:NamedIndividual ;
+    rdfs:label "Aedirn"@en .
 
-:Aedirnian_Special_Service a  :Organisation,
+:Aedirnian_Special_Service a :Organisation,
         :Secret_service,
-       owl:NamedIndividual ;
-       rdfs:label "Aedirnian Special Service"@en ;
-    :appearsInOrg  :Time_of_Contempt ;
-    :hasAffiliation  :Aplegatt ;
+        owl:NamedIndividual ;
+    rdfs:label "Aedirnian Special Service"@en ;
+    :appearsInOrg :Time_of_Contempt ;
+    :hasAffiliation :Aplegatt ;
     :hasPurpose "Spying" ;
     :hasStatus "Extant" ;
-    :inCountry  :Aedirn .
+    :inCountry :Aedirn .
 
-:Algernon_Guincamp a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
-    :hasAffiliation  :Rissberg ;
+:Algernon_Guincamp a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Rissberg ;
     :hasFullName "Algernon Guincamp" ;
     :hasGender "Male" ;
     :hasProfession "Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Assire_var_Anahid a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :Lodge_of_Sorceresses ;
-    :hasAffiliation  :Lodge_of_Sorceresses .
+:Assire_var_Anahid a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :Lodge_of_Sorceresses ;
+    :hasAffiliation :Lodge_of_Sorceresses .
 
 :Byrnjolf a owl:NamedIndividual ;
-    :ledBy  :School_of_the_Wolf,
+    :ledBy :School_of_the_Wolf,
         :Wolf_School .
 
-:Deglan a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :School_of_the_Wolf,
+:Deglan a :Character,
+        owl:NamedIndividual ;
+    :ledBy :School_of_the_Wolf,
         :Wolf_School .
-    
-:Elena_Fiachra_de_Mersault a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Crossroads_of_Ravens ;
-    :hasAffiliation  :Luitpold_Lindenbrog ;
+
+:Elena_Fiachra_de_Mersault a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Crossroads_of_Ravens ;
+    :hasAffiliation :Luitpold_Lindenbrog ;
     :hasEyeColor "Green" ;
     :hasFullName "Elena Fiachra de Mersault" ;
     :hasGender "Female" ;
     :hasHairColor "Fair" ;
     :hasProfession "Commandant of the security service of the Upper March" ;
-    :hasRace  :Quarter-elf ;
+    :hasRace :Quarter-elf ;
     :isAlive true .
 
 :Giancardi_Bank a owl:NamedIndividual ;
-    :hasAffiliation  :Fabio_Sachs,
+    :hasAffiliation :Fabio_Sachs,
         :Molnar_Giancardi .
-    
-:Kaedwen a  :Country,
-       owl:NamedIndividual ;
-   rdfs:label "Kaedwen"@en .
 
-:Luitpold_Lindenbrog a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Crossroads_of_Ravens ;
-    :hasAffiliation  :Elena_Fiachra_de_Mersault ;
+:Kaedwen a :Country,
+        owl:NamedIndividual ;
+    rdfs:label "Kaedwen"@en .
+
+:Luitpold_Lindenbrog a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Crossroads_of_Ravens ;
+    :hasAffiliation :Elena_Fiachra_de_Mersault ;
     :hasFullName "Luitpold Lindenbrog" ;
     :hasGender "Male" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Mahakam a  :Country,
-       owl:NamedIndividual ;
-   rdfs:label "Mahakam"@en .
+:Mahakam a :Country,
+        owl:NamedIndividual ;
+    rdfs:label "Mahakam"@en .
 
-:Mozaïk a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
-    :hasAffiliation  :Lytta_Neyd ;
+:Mozaïk a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
+    :hasAffiliation :Lytta_Neyd ;
     :hasFullName "Aïk" ;
     :hasGender "Female" ;
     :hasProfession "Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Nilfgaardian_Empire a  :Country,
-       owl:NamedIndividual ;
-   rdfs:label "Nilfgaardian Empire"@en .
+:Nilfgaardian_Empire a :Country,
+        owl:NamedIndividual ;
+    rdfs:label "Nilfgaardian Empire"@en .
 
-:Ortolan a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
-    :hasAffiliation  :Rissberg ;
+:Ortolan a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Rissberg ;
     :hasFullName "Ortolan" ;
     :hasGender "Male" ;
     :hasHairColor "White" ;
     :hasProfession "Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Redania a  :Country,
-       owl:NamedIndividual ;
-   rdfs:label "Redania"@en .
+:Redania a :Country,
+        owl:NamedIndividual ;
+    rdfs:label "Redania"@en .
 
-:Regency_Council a  :Organisation,
-       owl:NamedIndividual ;
-       rdfs:label "Regency Council"@en ;
-    :hasAffiliation  :Sigi_Reuven,
+:Regency_Council a :Organisation,
+        owl:NamedIndividual ;
+    rdfs:label "Regency Council"@en ;
+    :hasAffiliation :Sigi_Reuven,
         :Sigismund_Dijkstra .
 
-:Sheala_de_Tancarville a  :Character,
-       owl:NamedIndividual ;
-    :foundedBy  :Lodge_of_Sorceresses ;
-    :hasAffiliation  :Lodge_of_Sorceresses .
+:Sheala_de_Tancarville a :Character,
+        owl:NamedIndividual ;
+    :foundedBy :Lodge_of_Sorceresses ;
+    :hasAffiliation :Lodge_of_Sorceresses .
 
 <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Sigismund's_Bathhouse> a owl:NamedIndividual ;
-     :hasAffiliation  :Sigi_Reuven,
-         :Sigismund_Dijkstra .
+    :hasAffiliation :Sigi_Reuven,
+        :Sigismund_Dijkstra .
 
-:Sorel_Degerlund a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
-    :hasAffiliation  :Rissberg ;
+:Sorel_Degerlund a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
+    :hasAffiliation :Rissberg ;
     :hasFullName "Sorel Albert Amador Degerlund" ;
     :hasGender "Male" ;
     :hasProfession "Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Stefan_Skellen a  :Character,
-       owl:NamedIndividual ;
+:Stefan_Skellen a :Character,
+        owl:NamedIndividual ;
     :foundedBy <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang> ;
     :ledBy <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang> .
 
 :Temerian_Royal_Council a owl:NamedIndividual ;
-    :hasAffiliation  :Keira_Metz,
+    :hasAffiliation :Keira_Metz,
         :Triss_Merigold .
-    
-:Vattier_de_Rideaux a  :Character,
-       owl:NamedIndividual ;
-    :ledBy  :Nilfgaardian_Military_Intelligence,
+
+:Vattier_de_Rideaux a :Character,
+        owl:NamedIndividual ;
+    :ledBy :Nilfgaardian_Military_Intelligence,
         :Nilfgaardian_Secret_Service .
-    
-:Belohun a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
-    :hasAffiliation  :Ferrant_de_Lettenhove,
+
+:Belohun a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
+    :hasAffiliation :Ferrant_de_Lettenhove,
         :Lytta_Neyd ;
     :hasFullName "Belohun" ;
     :hasGender "Male" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Brehen a  :Character,
-       owl:NamedIndividual ;
+:Brehen a :Character,
+        owl:NamedIndividual ;
     :appearsIn <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Season_of_Storms ;
-    :hasAffiliation  :School_of_the_Cat ;
+    :hasAbility "Superhuman abilities, Swordsmanship, Alchemy, Signs"^^xsd:string ;
+    :hasAffiliation :School_of_the_Cat ;
     :hasEyeColor "Light yellow" ;
     :hasFullName "Brehen" ;
     :hasGender "Male" ;
     :hasHairColor "Ashen grey with snow-white highlights" ;
     :hasProfession "Witcher" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Dwarf a  :Race ;
-   rdfs:label "Dwarf"@en .
+:Dwarf a :Race ;
+    rdfs:label "Dwarf"@en .
 
-:Ferrant_de_Lettenhove a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
-    :hasAffiliation  :Belohun,
+:Ferrant_de_Lettenhove a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
+    :hasAffiliation :Belohun,
         :King__Belohun_of_Kerack ;
     :hasFullName "Ferrant de Lettenhove" ;
     :hasGender "Male" ;
     :hasProfession "Royal instigator" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:King__Belohun_of_Kerack a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms ;
-    :hasAffiliation  :Ferrant_de_Lettenhove,
+:King__Belohun_of_Kerack a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms ;
+    :hasAffiliation :Ferrant_de_Lettenhove,
         :Lytta_Neyd ;
     :hasFullName "Belohun" ;
     :hasGender "Male" ;
     :isAlive false .
 
-:Molnar_Giancardi a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Season_of_Storms,
+:Molnar_Giancardi a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Season_of_Storms,
         :Time_of_Contempt ;
-    :hasAffiliation  :Giancardi_Bank ;
+    :hasAffiliation :Giancardi_Bank ;
     :hasFullName "Molnar Giancardi" ;
     :hasGender "Male" ;
     :hasHairColor "White" ;
     :hasProfession "Banker" ;
-    :hasRace  :Dwarf ;
+    :hasRace :Dwarf ;
     :isAlive true .
 
-:Nilfgaardian_Military_Intelligence a  :Organisation,
+:Nilfgaardian_Military_Intelligence a :Organisation,
         :Secret_service,
-       owl:NamedIndividual ;
-       rdfs:label "Nilfgaardian Military Intelligence"@en ;
-    :hasAffiliation  :Cahir,
+        owl:NamedIndividual ;
+    rdfs:label "Nilfgaardian Military Intelligence"@en ;
+    :hasAffiliation :Cahir,
         :Rience ;
-    :hasLeader  :Vattier_de_Rideaux ;
+    :hasLeader :Vattier_de_Rideaux ;
     :hasPurpose "Spying" ;
-    :inCountry  :Nilfgaardian_Empire .
+    :inCountry :Nilfgaardian_Empire .
 
-:Nilfgaardian_Secret_Service a  :Organisation,
+:Nilfgaardian_Secret_Service a :Organisation,
         :Secret_service,
-       owl:NamedIndividual ;
-       rdfs:label "Nilfgaardian Secret Service"@en ;
-    :hasAffiliation  :Cahir,
+        owl:NamedIndividual ;
+    rdfs:label "Nilfgaardian Secret Service"@en ;
+    :hasAffiliation :Cahir,
         :Rience ;
-    :hasLeader  :Vattier_de_Rideaux ;
+    :hasLeader :Vattier_de_Rideaux ;
     :hasPurpose "Spying" ;
-    :inCountry  :Nilfgaardian_Empire .
+    :inCountry :Nilfgaardian_Empire .
 
-:Nimue_verch_Wledyr_ap_Gwyn a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Nimue_verch_Wledyr_ap_Gwyn a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Season_of_Storms,
         :The_Lady_of_the_Lake ;
     :hasFullName "Nimue verch Wledyr ap Gwyn" ;
     :hasGender "Female" ;
     :hasProfession "Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Quarter-elf a  :Race ;
-   rdfs:label "Quarter-elf"@en .
+:Quarter-elf a :Race ;
+    rdfs:label "Quarter-elf"@en .
 
 :Rissberg a owl:NamedIndividual ;
-    :hasAffiliation  :Algernon_Guincamp,
+    :hasAffiliation :Algernon_Guincamp,
         :Ortolan,
         :Sorel_Degerlund .
-    
+
 :Secret_service a owl:Class ;
-   rdfs:subClassOf  :Organisation ;
-   rdfs:label "Secret service"@en .
+    rdfs:label "Secret service"@en ;
+    rdfs:subClassOf :Organisation .
 
 :Witcher_school a owl:Class ;
-   rdfs:subClassOf  :Organisation ;
-   rdfs:label "Witcher school"@en .
+    rdfs:label "Witcher school"@en ;
+    rdfs:subClassOf :Organisation .
 
-:Aplegatt a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Time_of_Contempt ;
-    :hasAffiliation  :Aedirnian_Special_Service,
+:Aplegatt a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Time_of_Contempt ;
+    :hasAffiliation :Aedirnian_Special_Service,
         :Demavend_III,
         :King__Demavend_III_of_Aedirn ;
     :hasFullName "Aplegatt" ;
     :hasGender "Male" ;
     :hasProfession "Royal Messenger" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
 :Kaedwenian_Secret_Service a :Organisation,
         owl:NamedIndividual ;
     rdfs:label "Kaedwenian Secret Service"@en ;
     :appearsInOrg <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-                  :Time_of_Contempt ;
+        :Time_of_Contempt ;
     :hasAffiliation :Rience ;
     :hasLeader :Mansfeld ;
     :hasPurpose "Spying" ;
@@ -635,7 +640,7 @@
         owl:NamedIndividual ;
     rdfs:label "Mahakam Volunteer Army"@en ;
     :appearsInOrg <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
-                  :The_Lady_of_the_Lake ;
+        :The_Lady_of_the_Lake ;
     :hasAffiliation :Yarpen_Zigrin ;
     :hasLeader :Barclay_Els ;
     :inCountry :Mahakam .
@@ -644,7 +649,7 @@
         owl:NamedIndividual ;
     rdfs:label "Yarpen Zigrin's Company"@en ;
     :appearsInOrg :Blood_of_Elves,
-                  :Sword_of_Destiny ;
+        :Sword_of_Destiny ;
     :hasAffiliation :Yarpen_Zigrin ;
     :hasLeader :Yarpen_Zigrin ;
     :hasType "Mercenary group" ;
@@ -654,44 +659,44 @@
         owl:NamedIndividual ;
     rdfs:label "Crossroads of Ravens"@en ;
     :hasCharacter :Artamon_of_Asguth,
-                  :Cervia_Herrada_de_Graffiacane,
-                  :Elena_Fiachra_de_Mersault,
-                  :Luitpold_Lindenbrog,
-                  :Preston_Holt ;
+        :Cervia_Herrada_de_Graffiacane,
+        :Elena_Fiachra_de_Mersault,
+        :Luitpold_Lindenbrog,
+        :Preston_Holt ;
     :releaseYear "2024"^^xsd:gYear .
 
-:Fabio_Sachs a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :The_Lady_of_the_Lake,
+:Fabio_Sachs a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Giancardi_Bank ;
+    :hasAffiliation :Giancardi_Bank ;
     :hasFullName "Fabio Sachs" ;
     :hasGender "Male" ;
     :hasHairColor "Chestnut" ;
     :hasProfession "Explorer, Bank clerk" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Jarre a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
+:Jarre a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :Time_of_Contempt ;
-    :hasAffiliation  :Temple_of_Melitele ;
+    :hasAffiliation :Temple_of_Melitele ;
     :hasFullName "Jarre" ;
     :hasGender "Male" ;
     :hasProfession "Scribe, Author, Soldier" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
 <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang> a :Organisation,
         owl:NamedIndividual ;
     rdfs:label "Skellen's gang"@en ;
     :appearsInOrg :The_Tower_of_the_Swallow,
-                  :Time_of_Contempt ;
+        :Time_of_Contempt ;
     :hasAffiliation :Rience ;
     :hasFounder :Stefan_Skellen ;
     :hasLeader :Stefan_Skellen ;
@@ -702,18 +707,18 @@
 :Country a owl:Class ;
     rdfs:label "Country"@en .
 
-:Jacob_Fenn a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Jacob_Fenn a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Season_of_Storms,
         :The_Tower_of_the_Swallow,
         :Time_of_Contempt ;
-    :foundedBy  :Codringher_and_Fenn ;
-    :hasAffiliation  :Codringher_and_Fenn ;
+    :foundedBy :Codringher_and_Fenn ;
+    :hasAffiliation :Codringher_and_Fenn ;
     :hasFullName "Jacob Fenn" ;
     :hasGender "Male" ;
     :hasProfession "Jurist" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
 :Syndicate a :Organisation,
@@ -721,10 +726,10 @@
     rdfs:label "Syndicate"@en ;
     :appearsInOrg <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game> ;
     :hasAffiliation :Azar_Javed,
-                     :Sigi_Reuven,
-                     :Sigismund_Dijkstra ;
+        :Sigi_Reuven,
+        :Sigismund_Dijkstra ;
     :hasFounder :Sigi_Reuven,
-                :Sigismund_Dijkstra ;
+        :Sigismund_Dijkstra ;
     :hasPurpose "Mutual profit" ;
     :hasType "Criminal organization" .
 
@@ -732,70 +737,71 @@
         owl:NamedIndividual ;
     rdfs:label "Aedirnian Special Forces"@en ;
     :appearsInOrg :Blood_of_Elves,
-                  <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
-                  :Time_of_Contempt ;
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        :Time_of_Contempt ;
     :hasAffiliation :Rayla ;
     :hasFounder :Demavend_III,
-                :King__Demavend_III_of_Aedirn ;
+        :King__Demavend_III_of_Aedirn ;
     :hasLeader :Rayla ;
     :inCountry :Aedirn .
 
-:Artaud_Terranova a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Artaud_Terranova a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Sword_of_Destiny,
         :Time_of_Contempt ;
-    :hasAffiliation  :Brotherhood_of_Sorcerers,
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers,
         :Chapter_of_the_Gift_and_the_Art ;
     :hasFullName "Artaud Terranova" ;
     :hasGender "Male" ;
     :hasProfession "Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
 :Chapter_of_the_Gift_and_the_Art a :Organisation,
         owl:NamedIndividual ;
     rdfs:label "Chapter of the Gift and the Art"@en ;
     :appearsInOrg :Baptism_of_Fire,
-                  :Blood_of_Elves,
-                  <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
-                  :Time_of_Contempt ;
+        :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        :Time_of_Contempt ;
     :hasAffiliation :Artaud_Terranova,
-                     :Francesca_Findabair ;
+        :Francesca_Findabair ;
     :hasPurpose "sets rules and regulations for all magic in the Northern Kingdoms" ;
     :hasStatus "Extinct" ;
     :hasType "Inner circle of mages" ;
     :ledBy :Brotherhood_of_Sorcerers .
 
-:Codringher a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Codringher a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Season_of_Storms,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
         :Time_of_Contempt ;
-    :foundedBy  :Codringher_and_Fenn ;
-    :hasAffiliation  :Codringher_and_Fenn ;
+    :foundedBy :Codringher_and_Fenn ;
+    :hasAffiliation :Codringher_and_Fenn ;
     :hasEyeColor "Greenish yellow" ;
     :hasFullName "Codringher" ;
     :hasGender "Male" ;
     :hasHairColor "Grey" ;
     :hasProfession "Jurist" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
 :Codringher_and_Fenn a :Organisation,
         owl:NamedIndividual ;
     rdfs:label "Codringher and Fenn"@en ;
     :appearsInOrg :Baptism_of_Fire,
-                  :The_Witcher,
-                  :Time_of_Contempt ;
+        :The_Witcher,
+        :Time_of_Contempt ;
     :hasAffiliation :Codringher,
-                     :Jacob_Fenn ;
+        :Jacob_Fenn ;
     :hasFounder :Codringher,
-                 :Jacob_Fenn ;
+        :Jacob_Fenn ;
     :hasStatus "Extinct" ;
     :hasType "Detective agency and Law firm" ;
     :inCountry :Temeria .
@@ -804,84 +810,86 @@
         owl:NamedIndividual ;
     rdfs:label "Council of Wizards"@en ;
     :appearsInOrg :Baptism_of_Fire,
-                  :Blood_of_Elves,
-                  :Time_of_Contempt ;
+        :Blood_of_Elves,
+        :Time_of_Contempt ;
     :hasAffiliation :Radcliffe,
-                     :Yennefer,
-                     :Yennefer_of_Vengerberg ;
+        :Yennefer,
+        :Yennefer_of_Vengerberg ;
     :hasPurpose "To focus on magical experiments, research, and expanding magical knowledge." ;
     :hasStatus "Extinct" ;
     :hasType "Inner circle of mages" ;
     :ledBy :Brotherhood_of_Sorcerers .
 
-:Coën a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+:Coën a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
         :Time_of_Contempt ;
-    :hasAffiliation  :School_of_the_Griffin ;
+    :hasAbility "Superhuman abilities, Swordsmanship, Alchemy, Signs"^^xsd:string ;
+    :hasAffiliation :School_of_the_Griffin ;
     :hasEyeColor "Yellow-green and bloodshot" ;
     :hasFullName "Coën" ;
     :hasGender "Male" ;
     :hasHairColor "Black" ;
     :hasProfession "Witcher" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Lydia_van_Bredevoort a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+:Lydia_van_Bredevoort a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :Time_of_Contempt ;
-    :hasAffiliation  :Brotherhood_of_Sorcerers,
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers,
         :Vilgefortz ;
     :hasFullName "Lydia van Bredevoort" ;
     :hasGender "Female" ;
     :hasProfession "Artist, Mage, Secretary" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Ori_Reuven a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Ori_Reuven a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
         :The_Lady_of_the_Lake,
         :The_Witcher ;
-    :hasAffiliation  :Redanian_Secret_Service,
+    :hasAffiliation :Redanian_Secret_Service,
         :Sigi_Reuven,
         :Sigismund_Dijkstra ;
     :hasFullName "Oribasius Giafranco Paolo Reuven" ;
     :hasGender "Male" ;
     :hasHairColor "Grey" ;
     :hasProfession "Assistant" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Big_Four a  :Organisation,
-       owl:NamedIndividual ;
-       rdfs:label "Big Four"@en ;
+:Big_Four a :Organisation,
+        owl:NamedIndividual ;
+    rdfs:label "Big Four"@en ;
     :appearsInOrg <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
-    :hasAffiliation  :Sigi_Reuven,
+    :hasAffiliation :Sigi_Reuven,
         :Sigismund_Dijkstra ;
-    :hasLeader  :Carlo_Varese,
+    :hasLeader :Carlo_Varese,
         :Cyprian_Wiley,
         :Francis_Bedlam,
         :Sigi_Reuven,
         :Sigismund_Dijkstra ;
     :hasPurpose "Control over Novigrad" ;
     :hasType "Criminal organization" ;
-    :inCountry  :Redania .
+    :inCountry :Redania .
 
-:Calanthe a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Calanthe a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Sword_of_Destiny,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
@@ -891,101 +899,103 @@
     :hasFullName "Calanthe Fiona Riannon" ;
     :hasGender "Female" ;
     :hasHairColor "Ashen-gray" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
 :Game a owl:Class ;
     rdfs:label "Game"@en ;
     rdfs:comment "A video game based on the Witcher series"@en .
 
-:Order_of_the_Flaming_Rose a  :Organisation,
-       owl:NamedIndividual ;
-       rdfs:label "Order of the Flaming Rose"@en ;
-    :appearsInOrg  :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
-    :hasAffiliation  :Rayla,
+:Order_of_the_Flaming_Rose a :Organisation,
+        owl:NamedIndividual ;
+    rdfs:label "Order of the Flaming Rose"@en ;
+    :appearsInOrg :The_Witcher,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
+    :hasAffiliation :Rayla,
         :Roderick_de_Wett,
         :Siegfried_of_Denesle ;
-    :hasFounder  :Jacques_de_Aldersberg ;
-    :hasLeader  :Holy_Congregation_headed_by_Grandmaster ;
+    :hasFounder :Jacques_de_Aldersberg ;
+    :hasLeader :Holy_Congregation_headed_by_Grandmaster ;
     :hasPurpose "Defend humans from evil" ;
     :hasStatus "Dissolved" ;
     :hasType "Military religious order" .
 
-:Radcliffe a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
+:Radcliffe a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
         :Sword_of_Destiny,
         :The_Tower_of_the_Swallow,
         :Time_of_Contempt ;
-    :hasAffiliation  :Brotherhood_of_Sorcerers,
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers,
         :Council_of_Wizards,
         :Demavend_III,
         :King__Demavend_III_of_Aedirn ;
     :hasFullName "Radcliffe" ;
     :hasGender "Male" ;
     :hasProfession "Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Rayla a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
+:Rayla a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
         :The_Lady_of_the_Lake,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Aedirnian_Special_Forces,
+    :hasAffiliation :Aedirnian_Special_Forces,
         :Order_of_the_Flaming_Rose ;
     :hasFullName "Rayla" ;
     :hasGender "Female" ;
     :hasHairColor "Black, later white" ;
     :hasProfession "Mercenary" ;
-    :hasRace  :Half_elf ;
+    :hasRace :Half_elf ;
     :isAlive true ;
-    :ledBy  :Aedirnian_Special_Forces .
+    :ledBy :Aedirnian_Special_Forces .
 
-:Sabrina_Glevissig a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+:Sabrina_Glevissig a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
         :Time_of_Contempt ;
-    :foundedBy  :Lodge_of_Sorceresses ;
-    :hasAffiliation  :King__Henselt_of_Kaedwen,
+    :foundedBy :Lodge_of_Sorceresses ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :King__Henselt_of_Kaedwen,
         :Lodge_of_Sorceresses ;
     :hasEyeColor "Black" ;
     :hasFullName "Sabrina Glevissig" ;
     :hasGender "Female" ;
     :hasHairColor "Black" ;
     :hasProfession "Advisor, Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Shani a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
+:Shani a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
         :Hearts_of_Stone_expansion,
         :The_Lady_of_the_Lake,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
-    :hasAffiliation  :Oxenfurt_Academy,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Shani's_Clinic> ;
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
+    :hasAffiliation :Oxenfurt_Academy,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Shani's_Clinic> ;
     :hasEyeColor "Hazel" ;
     :hasFullName "Shani" ;
     :hasGender "Female" ;
     :hasHairColor "Dark red" ;
     :hasProfession "Medic, Dean of the Department of Medicine" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Blood_and_Wine_expansion a  :Game,
-       owl:NamedIndividual ;
-       rdfs:label "Blood and Wine expansion"@en ;
-    :hasCharacter  :Ciri,
+:Blood_and_Wine_expansion a :Game,
+        owl:NamedIndividual ;
+    rdfs:label "Blood and Wine expansion"@en ;
+    :hasCharacter :Ciri,
         :Dandelion,
         :Emiel_Regis_Rohellec_Terzieff-Godefroy,
         :Meve,
@@ -1000,68 +1010,69 @@
     rdfs:label "Book"@en ;
     rdfs:comment "A book from the Witcher series by Andrzej Sapkowski"@en .
 
-:Emhyr_var_Emreis a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Emhyr_var_Emreis a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
     :hasEyeColor "Brown" ;
     :hasFullName "Emhyr var Emreis" ;
     :hasGender "Male" ;
     :hasHairColor "Black" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Emiel_Regis_Rohellec_Terzieff-Godefroy a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Emiel_Regis_Rohellec_Terzieff-Godefroy a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_and_Wine_expansion,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> ;
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> ;
     :hasAffiliation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company> ;
     :hasEyeColor "Black" ;
     :hasFullName "Emiel Regis Rohellec Terzieff-Godefroy" ;
     :hasGender "Male" ;
     :hasHairColor "Grey" ;
     :hasProfession "Barber-surgeon" ;
-    :hasRace  :Higher_vampire ;
+    :hasRace :Higher_vampire ;
     :isAlive false .
 
-<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company> a  :Organisation,
+<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company> a :Organisation,
         owl:NamedIndividual ;
-        rdfs:label "Geralt's Company"@en ;
-     :appearsInOrg  :Baptism_of_Fire,
-         :The_Tower_of_the_Swallow ;
-     :hasAffiliation  :Angoulême,
-         :Cahir,
-         :Dandelion,
-         :Emiel_Regis_Rohellec_Terzieff-Godefroy,
-         :Milva,
-         :Regis ;
-     :hasLeader  :Geralt_of_Rivia ;
-     :hasPurpose "to rescue Ciri" ;
-     :hasStatus "Dissolved" ;
-     :hasType "rag-tag company" .
+    rdfs:label "Geralt's Company"@en ;
+    :appearsInOrg :Baptism_of_Fire,
+        :The_Tower_of_the_Swallow ;
+    :hasAffiliation :Angoulême,
+        :Cahir,
+        :Dandelion,
+        :Emiel_Regis_Rohellec_Terzieff-Godefroy,
+        :Milva,
+        :Regis ;
+    :hasLeader :Geralt_of_Rivia ;
+    :hasPurpose "to rescue Ciri" ;
+    :hasStatus "Dissolved" ;
+    :hasType "rag-tag company" .
 
-:Lytta_Neyd a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+:Lytta_Neyd a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Season_of_Storms,
         :Sword_of_Destiny,
         :The_Lady_of_the_Lake,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
-    :hasAffiliation  :Belohun,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Belohun,
         :King__Belohun_of_Kerack,
         :Mozaïk ;
     :hasEyeColor "Jade green" ;
@@ -1069,55 +1080,57 @@
     :hasGender "Female" ;
     :hasHairColor "Fox red" ;
     :hasProfession "Advisor, Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Margarita_Laux-Antille a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Margarita_Laux-Antille a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :foundedBy  :Lodge_of_Sorceresses ;
-    :hasAffiliation  :Brotherhood_of_Sorcerers,
+    :foundedBy :Lodge_of_Sorceresses ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers,
         :Lodge_of_Sorceresses ;
     :hasEyeColor "Green" ;
     :hasFullName "Margarita Laux-Antille" ;
     :hasGender "Female" ;
     :hasHairColor "Blonde" ;
     :hasProfession "Rectoress of Aretuza, Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Nenneke a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+:Nenneke a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
+    :hasAbility "Herbology, healing"^^xsd:string ;
     :hasAffiliation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Melitele_'s_clergy> ;
     :hasFullName "Nenneke" ;
     :hasGender "Female" ;
     :hasProfession "Abbess" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Regis a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Regis a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_and_Wine_expansion,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> ;
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> ;
     :hasAffiliation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company> ;
     :hasEyeColor "Black" ;
     :hasFullName "Emiel Regis Rohellec Terzieff-Godefroy" ;
@@ -1126,71 +1139,74 @@
     :hasProfession "Barber-surgeon" ;
     :isAlive false .
 
-:Lambert a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+:Lambert a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :hasAffiliation  :School_of_the_Wolf,
+    :hasAbility "Superhuman abilities, Swordsmanship, Alchemy, Signs"^^xsd:string ;
+    :hasAffiliation :School_of_the_Wolf,
         :Wolf_School ;
     :hasEyeColor "Brown" ;
     :hasFullName "Lambert" ;
     :hasGender "Male" ;
     :hasHairColor "Brown" ;
     :hasProfession "Witcher" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:School_of_the_Griffin a  :Organisation,
+:School_of_the_Griffin a :Organisation,
         :Witcher_school,
-       owl:NamedIndividual ;
-       rdfs:label "School of the Griffin"@en ;
+        owl:NamedIndividual ;
+    rdfs:label "School of the Griffin"@en ;
     :appearsInOrg <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> ;
-    :hasAffiliation  :Coën,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> ;
+    :hasAffiliation :Coën,
         :George,
         :Jerome,
         :Raven ;
-    :hasFounder  :Erland_of_Larvik ;
-    :hasLeader  :Keldar ;
+    :hasFounder :Erland_of_Larvik ;
+    :hasLeader :Keldar ;
     :hasStatus "Dissolved" .
 
-:Tissaia_de_Vries a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Tissaia_de_Vries a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Brotherhood_of_Sorcerers ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers ;
     :hasFullName "Tissaia de Vries" ;
     :hasGender "Female" ;
     :hasHairColor "Dark" ;
     :hasProfession "Rectoress of Aretuza, Mage, Author" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Francesca_Findabair a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Francesca_Findabair a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
         :The_Lady_of_the_Lake,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :foundedBy  :Lodge_of_Sorceresses ;
-    :hasAffiliation  :Aelirenn,
+    :foundedBy :Lodge_of_Sorceresses ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Aelirenn,
         :Brotherhood_of_Sorcerers,
         :Chapter_of_the_Gift_and_the_Art,
         :Lodge_of_Sorceresses ;
@@ -1199,96 +1215,104 @@
     :hasGender "Female" ;
     :hasHairColor "Dark gold" ;
     :hasProfession "Mage" ;
-    :hasRace  :Elf ;
+    :hasRace :Elf ;
     :isAlive true .
 
-:Geralt_of_Rivia a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Geralt_of_Rivia a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
+        :Blood_and_Wine_expansion,
         :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Season_of_Storms,
         :Sword_of_Destiny,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
+        :The_Witcher,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :hasAffiliation  :School_of_the_Wolf,
+    :hasAbility "Superhuman abilities, Swordsmanship, Alchemy, Signs"^^xsd:string ;
+    :hasAffiliation :School_of_the_Wolf,
         :Wolf_School ;
     :hasEyeColor "Dark, unspecified color" ;
     :hasFullName "Geralt of Rivia" ;
     :hasGender "Male" ;
     :hasHairColor "Milk-white" ;
     :hasProfession "Witcher" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true ;
     :ledBy <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company> .
 
-:King__Vizimir_II_of_Redania a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:King__Vizimir_II_of_Redania a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
         :Season_of_Storms,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Philippa_Eilhart ;
+    :hasAffiliation :Philippa_Eilhart ;
     :hasFullName "Vizimir II" ;
     :hasGender "Male" ;
     :isAlive false .
 
-:Meve a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Meve a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_and_Wine_expansion,
         :Blood_of_Elves,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
     :hasAffiliation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Lyrian-Rivian_Army_White_Queen's_corps> ;
     :hasEyeColor "Light green" ;
     :hasFullName "Meve" ;
     :hasGender "Female" ;
     :hasHairColor "Greyish white" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Vizimir_II a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Vizimir_II a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
         :Season_of_Storms,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Philippa_Eilhart ;
+    :hasAffiliation :Philippa_Eilhart ;
     :hasFullName "Vizimir II" ;
     :hasGender "Male" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Cahir a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Cahir a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
+    :hasAbility "Swordmanship, Horsemanship"^^xsd:string ;
     :hasAffiliation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company>,
         :Nilfgaardian_Military_Intelligence,
         :Nilfgaardian_Secret_Service ;
@@ -1297,40 +1321,41 @@
     :hasGender "Male" ;
     :hasHairColor "Dark" ;
     :hasProfession "Knight" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Foltest a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Foltest a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Keira_Metz,
+    :hasAffiliation :Keira_Metz,
         :Triss_Merigold ;
     :hasEyeColor "Brown" ;
     :hasGender "Male" ;
     :hasHairColor "Red" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Keira_Metz a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Keira_Metz a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :foundedBy  :Lodge_of_Sorceresses ;
-    :hasAffiliation  :Foltest,
+    :foundedBy :Lodge_of_Sorceresses ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Foltest,
         :King__Foltest_of_Temeria,
         :Lodge_of_Sorceresses,
         :Temerian_Royal_Council ;
@@ -1339,117 +1364,101 @@
     :hasGender "Female" ;
     :hasHairColor "Straw blonde" ;
     :hasProfession "Advisor, Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:King__Foltest_of_Temeria a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:King__Foltest_of_Temeria a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Keira_Metz,
+    :hasAffiliation :Keira_Metz,
         :Triss_Merigold ;
     :hasEyeColor "Brown" ;
     :hasGender "Male" ;
     :hasHairColor "Red" ;
     :isAlive false .
 
-:School_of_the_Cat a  :Organisation,
+:School_of_the_Cat a :Organisation,
         :Witcher_school,
-       owl:NamedIndividual ;
-       rdfs:label "School of the Cat"@en ;
+        owl:NamedIndividual ;
+    rdfs:label "School of the Cat"@en ;
     :appearsInOrg <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Season_of_Storms,
         :The_Lady_of_the_Lake,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> ;
-    :hasAffiliation  :Brehen,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> ;
+    :hasAffiliation :Brehen,
         :Gaetan,
         :Jad_Karadin,
         :Kiyan ;
-    :hasFounder  :Gezras ;
-    :hasLeader  :Guxart,
+    :hasFounder :Gezras ;
+    :hasLeader :Guxart,
         :Treyse ;
-    :inCountry  :Kaedwen .
+    :inCountry :Kaedwen .
 
-:School_of_the_Wolf a  :Organisation,
+:School_of_the_Wolf a :Organisation,
         :Witcher_school,
-       owl:NamedIndividual ;
-       rdfs:label "School of the Wolf"@en ;
-    :appearsInOrg  :Blood_of_Elves,
+        owl:NamedIndividual ;
+    rdfs:label "School of the Wolf"@en ;
+    :appearsInOrg :Blood_of_Elves,
         :The_Last_Wish,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
-    :hasAffiliation  :Eskel,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
+    :hasAffiliation :Eskel,
         :Geralt_of_Rivia,
         :Lambert,
         :Vesemir ;
-    :hasLeader  :Byrnjolf,
+    :hasLeader :Byrnjolf,
         :Deglan,
         :Eskel,
         :Vesemir ;
     :hasStatus "Extinct" .
 
-:Wolf_School a  :Organisation,
-       owl:NamedIndividual ;
-       rdfs:label "School of the Wolf"@en ;
-    :appearsInOrg  :Blood_of_Elves,
-        :The_Last_Wish,
-        :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
-    :hasAffiliation  :Eskel,
-        :Geralt_of_Rivia,
-        :Lambert,
-        :Vesemir ;
-    :hasLeader  :Byrnjolf,
-        :Deglan,
-        :Eskel,
-        :Vesemir ;
-    :hasStatus "Extinct" ;
-    :hasType "Witcher school" .
 
-:Ciri a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Ciri a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_and_Wine_expansion,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Season_of_Storms,
         :Sword_of_Destiny,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :The_Witcher_IV,
         :Time_of_Contempt ;
+    :hasAbility "Elder Blood gene, Swordsmanship, Magic"^^xsd:string ;
     :hasEyeColor "Emerald-green" ;
     :hasFullName "Cirilla Fiona Elen Riannon" ;
     :hasGender "Female" ;
     :hasHairColor "Ashen-gray" ;
     :hasProfession "Witcher, Empress of Nilfgaard" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Demavend_III a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Demavend_III a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :foundedBy  :Aedirnian_Special_Forces ;
-    :hasAffiliation  :Aplegatt,
+    :foundedBy :Aedirnian_Special_Forces ;
+    :hasAffiliation :Aplegatt,
         :Radcliffe,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
@@ -1457,21 +1466,21 @@
     :hasFullName "Demavend III" ;
     :hasGender "Male" ;
     :hasHairColor "Grey" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:King__Demavend_III_of_Aedirn a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:King__Demavend_III_of_Aedirn a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :foundedBy  :Aedirnian_Special_Forces ;
-    :hasAffiliation  :Aplegatt,
+    :foundedBy :Aedirnian_Special_Forces ;
+    :hasAffiliation :Aplegatt,
         :Radcliffe,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
@@ -1481,33 +1490,34 @@
     :hasHairColor "Grey" ;
     :isAlive false .
 
-:Rience a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Rience a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Ban_Ard_Academy,
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Ban_Ard_Academy,
         :Kaedwenian_Secret_Service,
         :Nilfgaardian_Military_Intelligence,
         :Nilfgaardian_Secret_Service,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang>,
         :Vilgefortz ;
     :hasEyeColor "Dark" ;
     :hasFullName "Rience" ;
     :hasGender "Male" ;
     :hasHairColor "Black" ;
     :hasProfession "Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Sword_of_Destiny a  :Book,
-       owl:NamedIndividual ;
-       rdfs:label "Sword od Destiny"@en ;
-    :hasCharacter  :Artaud_Terranova,
+:Sword_of_Destiny a :Book,
+        owl:NamedIndividual ;
+    rdfs:label "Sword od Destiny"@en ;
+    :hasCharacter :Artaud_Terranova,
         :Calanthe,
         :Ciri,
         :Dandelion,
@@ -1522,41 +1532,43 @@
     :hasOrganisation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Yarpen_Zigrin's_company> ;
     :releaseYear "1992"^^xsd:gYear .
 
-:Vesemir a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
+:Vesemir a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
         :Season_of_Storms,
         :Sword_of_Destiny,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :hasAffiliation  :School_of_the_Wolf,
+    :hasAbility "Superhuman abilities, Swordsmanship, Alchemy, Signs"^^xsd:string ;
+    :hasAffiliation :School_of_the_Wolf,
         :Wolf_School ;
     :hasEyeColor "Amber" ;
     :hasFullName "Vesemir" ;
     :hasGender "Male" ;
     :hasHairColor "Grey" ;
     :hasProfession "Witcher" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true ;
-    :ledBy  :School_of_the_Wolf,
+    :ledBy :School_of_the_Wolf,
         :Wolf_School .
 
-:Vilgefortz a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Vilgefortz a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_and_Wine_expansion,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Brotherhood_of_Sorcerers,
+    :hasAbility "Stick-fighting (staff), Magic"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers,
         :Druids_of_Kovirian_Circle,
         :Lydia_van_Bredevoort,
         :Rience ;
@@ -1564,91 +1576,93 @@
     :hasGender "Male" ;
     :hasHairColor "Brown" ;
     :hasProfession "Druid, Mercenary, Mage, Spy" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false .
 
-:Yarpen_Zigrin a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+:Yarpen_Zigrin a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Sword_of_Destiny,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
-    :hasAffiliation  :Mahakam_Volunteer_Army,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Yarpen_Zigrin's_company> ;
+    :hasAffiliation :Mahakam_Volunteer_Army,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Yarpen_Zigrin's_company> ;
     :hasEyeColor "Brown" ;
     :hasGender "Male" ;
     :hasHairColor "Brown" ;
     :hasProfession "Adventurer, Dragon slayer, Soldier" ;
-    :hasRace  :Dwarf ;
+    :hasRace :Dwarf ;
     :isAlive true ;
     :ledBy <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Yarpen_Zigrin's_company> .
 
-:Eskel a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+:Eskel a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Blood_of_Elves,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Season_of_Storms,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :hasAffiliation  :School_of_the_Wolf,
+    :hasAbility "Superhuman abilities, Swordsmanship, Alchemy, Signs"^^xsd:string ;
+    :hasAffiliation :School_of_the_Wolf,
         :Wolf_School ;
     :hasEyeColor "Amber" ;
     :hasFullName "Eskel" ;
     :hasGender "Male" ;
     :hasHairColor "Brown" ;
     :hasProfession "Witcher" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true ;
-    :ledBy  :School_of_the_Wolf,
+    :ledBy :School_of_the_Wolf,
         :Wolf_School .
-    
-:Redanian_Secret_Service a  :Organisation,
-       owl:NamedIndividual ;
-       rdfs:label "Redanian Secret Service"@en ;
-    :appearsInOrg  :Baptism_of_Fire,
+
+:Redanian_Secret_Service a :Organisation,
+        owl:NamedIndividual ;
+    rdfs:label "Redanian Secret Service"@en ;
+    :appearsInOrg :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :Time_of_Contempt ;
-    :hasAffiliation  :Dandelion,
+    :hasAffiliation :Dandelion,
         :Ori_Reuven,
         :Sigi_Reuven,
         :Sigismund_Dijkstra ;
-    :hasFounder  :Casimir_de_Lauterpacht ;
-    :hasLeader  :Erik_Demartin,
+    :hasFounder :Casimir_de_Lauterpacht ;
+    :hasLeader :Erik_Demartin,
         :Sigi_Reuven,
         :Sigismund_Dijkstra ;
     :hasPurpose "Spying" ;
     :hasStatus "Extant" ;
     :hasType "Secret service" ;
-    :inCountry  :Redania .
+    :inCountry :Redania .
 
-:Philippa_Eilhart a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Philippa_Eilhart a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :The_Witcher_Battle_Arena,
         :Time_of_Contempt ;
-    :foundedBy  :Lodge_of_Sorceresses ;
-    :hasAffiliation  :Brotherhood_of_Sorcerers,
+    :foundedBy :Lodge_of_Sorceresses ;
+    :hasAbility "Magic, Polymorphy"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers,
         :King__Vizimir_II_of_Redania,
         :Lodge_of_Sorceresses,
         :Vizimir_II ;
@@ -1657,14 +1671,14 @@
     :hasGender "Female" ;
     :hasHairColor "Dark" ;
     :hasProfession "Advisor, Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive false ;
-    :ledBy  :Lodge_of_Sorceresses .
+    :ledBy :Lodge_of_Sorceresses .
 
-:The_Last_Wish a  :Book,
-       owl:NamedIndividual ;
-       rdfs:label "The Last Wish"@en ;
-    :hasCharacter  :Calanthe,
+:The_Last_Wish a :Book,
+        owl:NamedIndividual ;
+    rdfs:label "The Last Wish"@en ;
+    :hasCharacter :Calanthe,
         :Dandelion,
         :Emhyr_var_Emreis,
         :Eskel,
@@ -1678,26 +1692,27 @@
         :Vizimir_II,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasOrganisation  :School_of_the_Wolf,
+    :hasOrganisation :School_of_the_Wolf,
         :Wolf_School ;
     :releaseYear "1990"^^xsd:gYear .
 
-:Dandelion a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Dandelion a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_and_Wine_expansion,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Season_of_Storms,
         :Sword_of_Destiny,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
         :Time_of_Contempt ;
+    :hasAbility "Lute playing, Singing, Writing poetry and prose"^^xsd:string ;
     :hasAffiliation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company>,
         :Redanian_Secret_Service,
         :University_of_Oxenfurt ;
@@ -1706,25 +1721,26 @@
     :hasGender "Male" ;
     :hasHairColor "Blond" ;
     :hasProfession "Bard" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Triss_Merigold a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Triss_Merigold a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_and_Wine_expansion,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :Sword_of_Destiny,
         :The_Lady_of_the_Lake,
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :foundedBy  :Lodge_of_Sorceresses ;
-    :hasAffiliation  :Foltest,
+    :foundedBy :Lodge_of_Sorceresses ;
+    :hasAbility "Magic, Alchemy"^^xsd:string ;
+    :hasAffiliation :Foltest,
         :King__Foltest_of_Temeria,
         :Lodge_of_Sorceresses,
         :Temerian_Royal_Council ;
@@ -1733,16 +1749,16 @@
     :hasGender "Female" ;
     :hasHairColor "Chestnut" ;
     :hasProfession "Advisor, Mage" ;
-    :hasRace  :Human ;
+    :hasRace :Human ;
     :isAlive true .
 
-:Brotherhood_of_Sorcerers a  :Organisation,
-       owl:NamedIndividual ;
-       rdfs:label "Brotherhood of Sorcerers"@en ;
-    :appearsInOrg  :Baptism_of_Fire,
+:Brotherhood_of_Sorcerers a :Organisation,
+        owl:NamedIndividual ;
+    rdfs:label "Brotherhood of Sorcerers"@en ;
+    :appearsInOrg :Baptism_of_Fire,
         :Blood_of_Elves,
         :Time_of_Contempt ;
-    :hasAffiliation  :Artaud_Terranova,
+    :hasAffiliation :Artaud_Terranova,
         :Francesca_Findabair,
         :Lydia_van_Bredevoort,
         :Margarita_Laux-Antille,
@@ -1752,73 +1768,48 @@
         :Vilgefortz,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasFounder  :Geoffrey_Monck,
+    :hasFounder :Geoffrey_Monck,
         :Giambattista,
         :Jan_Bekker ;
-    :hasLeader  :Chapter_of_the_Gift_and_the_Art,
+    :hasLeader :Chapter_of_the_Gift_and_the_Art,
         :Council_of_Wizards ;
     :hasPurpose "Sets rules and regulations for all magic in the Northern Kingdoms" ;
     :hasStatus "Extinct" ;
     :hasType "Mage organization" .
 
-:Sigi_Reuven a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+
+
+:Sigismund_Dijkstra a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         :Time_of_Contempt ;
-    :foundedBy  :Syndicate ;
-    :hasAffiliation  :Big_Four,
+    :foundedBy :Syndicate ;
+    :hasAffiliation :Big_Four,
         :Ori_Reuven,
         :Redanian_Secret_Service,
         :Regency_Council,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Sigismund's_Bathhouse>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Sigismund's_Bathhouse>,
         :Syndicate ;
     :hasEyeColor "Azure" ;
     :hasFullName "Sigismund Dijkstra" ;
     :hasGender "Male" ;
     :hasHairColor "Bald" ;
     :hasProfession "Spymaster, Chancellor" ;
+    :hasRace :Human ;
     :isAlive true ;
-    :ledBy  :Big_Four,
-        :Redanian_Secret_Service .
-    
-:Sigismund_Dijkstra a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
-        :Blood_of_Elves,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
-        :The_Lady_of_the_Lake,
-        :The_Tower_of_the_Swallow,
-        :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-        :Time_of_Contempt ;
-    :foundedBy  :Syndicate ;
-    :hasAffiliation  :Big_Four,
-        :Ori_Reuven,
-        :Redanian_Secret_Service,
-        :Regency_Council,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Sigismund's_Bathhouse>,
-        :Syndicate ;
-    :hasEyeColor "Azure" ;
-    :hasFullName "Sigismund Dijkstra" ;
-    :hasGender "Male" ;
-    :hasHairColor "Bald" ;
-    :hasProfession "Spymaster, Chancellor" ;
-    :hasRace  :Human ;
-    :isAlive true ;
-    :ledBy  :Big_Four,
+    :ledBy :Big_Four,
         :Redanian_Secret_Service .
 
-:Yennefer a  :Character,
-       owl:NamedIndividual ;
-    :appearsIn  :Baptism_of_Fire,
+:Yennefer a :Character,
+        owl:NamedIndividual ;
+    :appearsIn :Baptism_of_Fire,
         :Blood_and_Wine_expansion,
         :Blood_of_Elves,
         :Season_of_Storms,
@@ -1827,85 +1818,87 @@
         :The_Last_Wish,
         :The_Tower_of_the_Swallow,
         :The_Witcher,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
         <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
-         :Time_of_Contempt ;
-     :hasAffiliation  :Brotherhood_of_Sorcerers,
-         :Council_of_Wizards,
-         :Demavend_III,
-         :King__Demavend_III_of_Aedirn,
-         :Lodge_of_Sorceresses ;
-     :hasEyeColor "Violet" ;
-     :hasFullName "Yennefer of Vengerberg" ;
-     :hasGender "Female" ;
-     :hasHairColor "Black" ;
-     :hasProfession "Advisor, Mage" ;
-     :hasRace  :Quarter-elf ;
-     :isAlive true .
+        :Time_of_Contempt ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers,
+        :Council_of_Wizards,
+        :Demavend_III,
+        :King__Demavend_III_of_Aedirn,
+        :Lodge_of_Sorceresses ;
+    :hasEyeColor "Violet" ;
+    :hasFullName "Yennefer of Vengerberg" ;
+    :hasGender "Female" ;
+    :hasHairColor "Black" ;
+    :hasProfession "Advisor, Mage" ;
+    :hasRace :Quarter-elf ;
+    :isAlive true .
 
-:Yennefer_of_Vengerberg a  :Character,
-      owl:NamedIndividual ;
-   :appearsIn  :Baptism_of_Fire,
-       :Blood_and_Wine_expansion,
-       :Blood_of_Elves,
-       :Season_of_Storms,
-       :Sword_of_Destiny,
-       :The_Lady_of_the_Lake,
-       :The_Last_Wish,
-       :The_Tower_of_the_Swallow,
-       :The_Witcher,
-      <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-      <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
-      <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
-       :Time_of_Contempt ;
-   :hasAffiliation  :Brotherhood_of_Sorcerers,
-       :Council_of_Wizards,
-       :Demavend_III,
-       :King__Demavend_III_of_Aedirn,
-       :Lodge_of_Sorceresses ;
-   :hasEyeColor "Violet" ;
-   :hasFullName "Yennefer of Vengerberg" ;
-   :hasGender "Female" ;
-   :hasHairColor "Black" ;
-   :hasProfession "Advisor, Mage" ;
-   :hasRace  :Quarter-elf ;
-   :isAlive true .
-
-<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> a  :Game,
+:Yennefer_of_Vengerberg a :Character,
         owl:NamedIndividual ;
-        rdfs:label "Thronebreaker: The Witcher Tales"@en ;
-     :hasCharacter  :Cahir,
-         :Dandelion,
-         :Demavend_III,
-         :Emiel_Regis_Rohellec_Terzieff-Godefroy,
-         :Foltest,
-         :King__Demavend_III_of_Aedirn,
-         :King__Foltest_of_Temeria,
-         :King__Vizimir_II_of_Redania,
-         :Meve,
-         :Nenneke,
-         :Rayla,
-         :Regis,
-         :Vizimir_II,
-         :Yarpen_Zigrin,
-         :Yennefer,
-         :Yennefer_of_Vengerberg ;
-     :hasOrganisation  :Aedirnian_Special_Forces,
-         :School_of_the_Cat,
-         :School_of_the_Griffin ;
-     :releaseYear "2018"^^xsd:gYear .
+    :appearsIn :Baptism_of_Fire,
+        :Blood_and_Wine_expansion,
+        :Blood_of_Elves,
+        :Season_of_Storms,
+        :Sword_of_Destiny,
+        :The_Lady_of_the_Lake,
+        :The_Last_Wish,
+        :The_Tower_of_the_Swallow,
+        :The_Witcher,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales>,
+        :Time_of_Contempt ;
+    :hasAbility "Magic"^^xsd:string ;
+    :hasAffiliation :Brotherhood_of_Sorcerers,
+        :Council_of_Wizards,
+        :Demavend_III,
+        :King__Demavend_III_of_Aedirn,
+        :Lodge_of_Sorceresses ;
+    :hasEyeColor "Violet" ;
+    :hasFullName "Yennefer of Vengerberg" ;
+    :hasGender "Female" ;
+    :hasHairColor "Black" ;
+    :hasProfession "Advisor, Mage" ;
+    :hasRace :Quarter-elf ;
+    :isAlive true .
 
-:Lodge_of_Sorceresses a  :Organisation,
-       owl:NamedIndividual ;
-       rdfs:label "Lodge of Sorceresses"@en ;
-    :appearsInOrg  :Baptism_of_Fire,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
+<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Thronebreaker:_The_Witcher_Tales> a :Game,
+        owl:NamedIndividual ;
+    rdfs:label "Thronebreaker: The Witcher Tales"@en ;
+    :hasCharacter :Cahir,
+        :Dandelion,
+        :Demavend_III,
+        :Emiel_Regis_Rohellec_Terzieff-Godefroy,
+        :Foltest,
+        :King__Demavend_III_of_Aedirn,
+        :King__Foltest_of_Temeria,
+        :King__Vizimir_II_of_Redania,
+        :Meve,
+        :Nenneke,
+        :Rayla,
+        :Regis,
+        :Vizimir_II,
+        :Yarpen_Zigrin,
+        :Yennefer,
+        :Yennefer_of_Vengerberg ;
+    :hasOrganisation :Aedirnian_Special_Forces,
+        :School_of_the_Cat,
+        :School_of_the_Griffin ;
+    :releaseYear "2018"^^xsd:gYear .
+
+:Lodge_of_Sorceresses a :Organisation,
+        owl:NamedIndividual ;
+    rdfs:label "Lodge of Sorceresses"@en ;
+    :appearsInOrg :Baptism_of_Fire,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game>,
         :The_Lady_of_the_Lake,
         :The_Tower_of_the_Swallow,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
-    :hasAffiliation  :Assire_var_Anahid,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> ;
+    :hasAffiliation :Assire_var_Anahid,
         :Francesca_Findabair,
         :Fringilla_Vigo,
         :Ida_Emean_aep_Sivney,
@@ -1917,7 +1910,7 @@
         :Triss_Merigold,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasFounder  :Assire_var_Anahid,
+    :hasFounder :Assire_var_Anahid,
         :Francesca_Findabair,
         :Keira_Metz,
         :Margarita_Laux-Antille,
@@ -1925,18 +1918,18 @@
         :Sabrina_Glevissig,
         :Sheala_de_Tancarville,
         :Triss_Merigold ;
-    :hasLeader  :Philippa_Eilhart ;
+    :hasLeader :Philippa_Eilhart ;
     :hasPurpose "To serve matters of magic outside politics" ;
     :hasStatus "Extinct" ;
     :hasType "Mage organization" .
 
 :Organisation a owl:Class ;
-       rdfs:label "Organisation"@en .
+    rdfs:label "Organisation"@en .
 
-:The_Witcher a  :Game,
-       owl:NamedIndividual ;
-       rdfs:label "The Witcher"@en ;
-    :hasCharacter  :Ciri,
+:The_Witcher a :Game,
+        owl:NamedIndividual ;
+    rdfs:label "The Witcher"@en ;
+    :hasCharacter :Ciri,
         :Codringher,
         :Coën,
         :Dandelion,
@@ -1960,16 +1953,16 @@
         :Yarpen_Zigrin,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasOrganisation  :Codringher_and_Fenn,
+    :hasOrganisation :Codringher_and_Fenn,
         :Order_of_the_Flaming_Rose,
         :School_of_the_Wolf,
         :Wolf_School ;
     :releaseYear "2007"^^xsd:gYear .
 
-:Season_of_Storms a  :Book,
-       owl:NamedIndividual ;
-       rdfs:label "Season of Storms"@en ;
-    :hasCharacter  :Addario_Bach,
+:Season_of_Storms a :Book,
+        owl:NamedIndividual ;
+    rdfs:label "Season of Storms"@en ;
+    :hasCharacter :Addario_Bach,
         :Algernon_Guincamp,
         :Antea_Derris,
         :Belohun,
@@ -1997,131 +1990,131 @@
         :Vizimir_II,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasOrganisation  :School_of_the_Cat ;
+    :hasOrganisation :School_of_the_Cat ;
     :releaseYear "2013"^^xsd:gYear .
 
-<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings> a  :Game,
+<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_2:_Assassins_of_Kings> a :Game,
         owl:NamedIndividual ;
-        rdfs:label "The Witcher 2: Assassins of Kings"@en ;
-     :hasCharacter  :Cahir,
-         :Ciri,
-         :Dandelion,
-         :Demavend_III,
-         :Emhyr_var_Emreis,
-         :Eskel,
-         :Foltest,
-         :Francesca_Findabair,
-         :Keira_Metz,
-         :King__Demavend_III_of_Aedirn,
-         :King__Foltest_of_Temeria,
-         :King__Vizimir_II_of_Redania,
-         :Lambert,
-         :Margarita_Laux-Antille,
-         :Meve,
-         :Philippa_Eilhart,
-         :Sabrina_Glevissig,
-         :Shani,
-         :Sigi_Reuven,
-         :Sigismund_Dijkstra,
-         :Tissaia_de_Vries,
-         :Triss_Merigold,
-         :Vizimir_II,
-         :Yarpen_Zigrin,
-         :Yennefer,
-         :Yennefer_of_Vengerberg ;
-     :hasOrganisation  :Kaedwenian_Secret_Service,
-         :Lodge_of_Sorceresses,
-         :Order_of_the_Flaming_Rose ;
-     :releaseYear "2011"^^xsd:gYear .
+    rdfs:label "The Witcher 2: Assassins of Kings"@en ;
+    :hasCharacter :Cahir,
+        :Ciri,
+        :Dandelion,
+        :Demavend_III,
+        :Emhyr_var_Emreis,
+        :Eskel,
+        :Foltest,
+        :Francesca_Findabair,
+        :Keira_Metz,
+        :King__Demavend_III_of_Aedirn,
+        :King__Foltest_of_Temeria,
+        :King__Vizimir_II_of_Redania,
+        :Lambert,
+        :Margarita_Laux-Antille,
+        :Meve,
+        :Philippa_Eilhart,
+        :Sabrina_Glevissig,
+        :Shani,
+        :Sigi_Reuven,
+        :Sigismund_Dijkstra,
+        :Tissaia_de_Vries,
+        :Triss_Merigold,
+        :Vizimir_II,
+        :Yarpen_Zigrin,
+        :Yennefer,
+        :Yennefer_of_Vengerberg ;
+    :hasOrganisation :Kaedwenian_Secret_Service,
+        :Lodge_of_Sorceresses,
+        :Order_of_the_Flaming_Rose ;
+    :releaseYear "2011"^^xsd:gYear .
 
-<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game> a  :Game,
+<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Gwent:_The_Witcher_Card_Game> a :Game,
         owl:NamedIndividual ;
-        rdfs:label "Gwent: The Witcher Card Game"@en ;
-     :hasCharacter  :Artaud_Terranova,
-         :Brehen,
-         :Cahir,
-         :Calanthe,
-         :Ciri,
-         :Coën,
-         :Dandelion,
-         :Demavend_III,
-         :Emhyr_var_Emreis,
-         :Emiel_Regis_Rohellec_Terzieff-Godefroy,
-         :Eskel,
-         :Foltest,
-         :Keira_Metz,
-         :King__Demavend_III_of_Aedirn,
-         :King__Foltest_of_Temeria,
-         :Lambert,
-         :Lydia_van_Bredevoort,
-         :Lytta_Neyd,
-         :Nenneke,
-         :Philippa_Eilhart,
-         :Regis,
-         :Rience,
-         :Sabrina_Glevissig,
-         :Sigi_Reuven,
-         :Sigismund_Dijkstra,
-         :Tissaia_de_Vries,
-         :Triss_Merigold,
-         :Vilgefortz,
-         :Yarpen_Zigrin ;
-     :hasOrganisation  :Chapter_of_the_Gift_and_the_Art,
-         :Lodge_of_Sorceresses,
-         :Mahakam_Volunteer_Army,
-         :Redanian_Secret_Service,
-         :School_of_the_Cat,
-         :School_of_the_Griffin,
-         :Syndicate ;
-     :releaseYear "2018"^^xsd:gYear .
+    rdfs:label "Gwent: The Witcher Card Game"@en ;
+    :hasCharacter :Artaud_Terranova,
+        :Brehen,
+        :Cahir,
+        :Calanthe,
+        :Ciri,
+        :Coën,
+        :Dandelion,
+        :Demavend_III,
+        :Emhyr_var_Emreis,
+        :Emiel_Regis_Rohellec_Terzieff-Godefroy,
+        :Eskel,
+        :Foltest,
+        :Keira_Metz,
+        :King__Demavend_III_of_Aedirn,
+        :King__Foltest_of_Temeria,
+        :Lambert,
+        :Lydia_van_Bredevoort,
+        :Lytta_Neyd,
+        :Nenneke,
+        :Philippa_Eilhart,
+        :Regis,
+        :Rience,
+        :Sabrina_Glevissig,
+        :Sigi_Reuven,
+        :Sigismund_Dijkstra,
+        :Tissaia_de_Vries,
+        :Triss_Merigold,
+        :Vilgefortz,
+        :Yarpen_Zigrin ;
+    :hasOrganisation :Chapter_of_the_Gift_and_the_Art,
+        :Lodge_of_Sorceresses,
+        :Mahakam_Volunteer_Army,
+        :Redanian_Secret_Service,
+        :School_of_the_Cat,
+        :School_of_the_Griffin,
+        :Syndicate ;
+    :releaseYear "2018"^^xsd:gYear .
 
-<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> a  :Game,
+<http://www.semanticweb.org/220941/ontologies/2025/10/witcher/The_Witcher_3:_Wild_Hunt> a :Game,
         owl:NamedIndividual ;
-        rdfs:label "The Witcher 3: Wild Hunt"@en ;
-     :hasCharacter  :Cahir,
-         :Ciri,
-         :Dandelion,
-         :Emhyr_var_Emreis,
-         :Emiel_Regis_Rohellec_Terzieff-Godefroy,
-         :Eskel,
-         :Fabio_Sachs,
-         :Foltest,
-         :Francesca_Findabair,
-         :Keira_Metz,
-         :King__Foltest_of_Temeria,
-         :King__Vizimir_II_of_Redania,
-         :Lambert,
-         :Lytta_Neyd,
-         :Margarita_Laux-Antille,
-         :Meve,
-         :Nenneke,
-         :Philippa_Eilhart,
-         :Regis,
-         :Rience,
-         :Shani,
-         :Sigi_Reuven,
-         :Sigismund_Dijkstra,
-         :Tissaia_de_Vries,
-         :Triss_Merigold,
-         :Vesemir,
-         :Vilgefortz,
-         :Vizimir_II,
-         :Yarpen_Zigrin,
-         :Yennefer,
-         :Yennefer_of_Vengerberg ;
-     :hasOrganisation  :Big_Four,
-         :Lodge_of_Sorceresses,
-         :Order_of_the_Flaming_Rose,
-         :School_of_the_Cat,
-         :School_of_the_Griffin,
-         :School_of_the_Wolf,
-         :Wolf_School ;
-     :releaseYear "2015"^^xsd:gYear .
+    rdfs:label "The Witcher 3: Wild Hunt"@en ;
+    :hasCharacter :Cahir,
+        :Ciri,
+        :Dandelion,
+        :Emhyr_var_Emreis,
+        :Emiel_Regis_Rohellec_Terzieff-Godefroy,
+        :Eskel,
+        :Fabio_Sachs,
+        :Foltest,
+        :Francesca_Findabair,
+        :Keira_Metz,
+        :King__Foltest_of_Temeria,
+        :King__Vizimir_II_of_Redania,
+        :Lambert,
+        :Lytta_Neyd,
+        :Margarita_Laux-Antille,
+        :Meve,
+        :Nenneke,
+        :Philippa_Eilhart,
+        :Regis,
+        :Rience,
+        :Shani,
+        :Sigi_Reuven,
+        :Sigismund_Dijkstra,
+        :Tissaia_de_Vries,
+        :Triss_Merigold,
+        :Vesemir,
+        :Vilgefortz,
+        :Vizimir_II,
+        :Yarpen_Zigrin,
+        :Yennefer,
+        :Yennefer_of_Vengerberg ;
+    :hasOrganisation :Big_Four,
+        :Lodge_of_Sorceresses,
+        :Order_of_the_Flaming_Rose,
+        :School_of_the_Cat,
+        :School_of_the_Griffin,
+        :School_of_the_Wolf,
+        :Wolf_School ;
+    :releaseYear "2015"^^xsd:gYear .
 
-:The_Tower_of_the_Swallow a  :Book,
-       owl:NamedIndividual ;
-       rdfs:label "The Tower of the Swallow"@en ;
-    :hasCharacter  :Cahir,
+:The_Tower_of_the_Swallow a :Book,
+        owl:NamedIndividual ;
+    rdfs:label "The Tower of the Swallow"@en ;
+    :hasCharacter :Cahir,
         :Calanthe,
         :Ciri,
         :Codringher,
@@ -2159,13 +2152,13 @@
     :hasOrganisation <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company>,
         :Lodge_of_Sorceresses,
         :Redanian_Secret_Service,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang> ;
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang> ;
     :releaseYear "1997"^^xsd:gYear .
 
-:Baptism_of_Fire a  :Book,
-       owl:NamedIndividual ;
-       rdfs:label "Baptism of Fire"@en ;
-    :hasCharacter  :Artaud_Terranova,
+:Baptism_of_Fire a :Book,
+        owl:NamedIndividual ;
+    rdfs:label "Baptism of Fire"@en ;
+    :hasCharacter :Artaud_Terranova,
         :Cahir,
         :Calanthe,
         :Ciri,
@@ -2198,19 +2191,19 @@
         :Vizimir_II,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasOrganisation  :Brotherhood_of_Sorcerers,
+    :hasOrganisation :Brotherhood_of_Sorcerers,
         :Chapter_of_the_Gift_and_the_Art,
         :Codringher_and_Fenn,
         :Council_of_Wizards,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company>,
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Geralt's_company>,
         :Lodge_of_Sorceresses,
         :Redanian_Secret_Service ;
     :releaseYear "1996"^^xsd:gYear .
 
-:Blood_of_Elves a  :Book,
-       owl:NamedIndividual ;
-       rdfs:label "Blood of Elves"@en ;
-    :hasCharacter  :Artaud_Terranova,
+:Blood_of_Elves a :Book,
+        owl:NamedIndividual ;
+    rdfs:label "Blood of Elves"@en ;
+    :hasCharacter :Artaud_Terranova,
         :Cahir,
         :Calanthe,
         :Ciri,
@@ -2249,20 +2242,20 @@
         :Yarpen_Zigrin,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasOrganisation  :Aedirnian_Special_Forces,
+    :hasOrganisation :Aedirnian_Special_Forces,
         :Brotherhood_of_Sorcerers,
         :Chapter_of_the_Gift_and_the_Art,
         :Council_of_Wizards,
         :Redanian_Secret_Service,
         :School_of_the_Wolf,
         :Wolf_School,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Yarpen_Zigrin's_company> ;
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Yarpen_Zigrin's_company> ;
     :releaseYear "1994"^^xsd:gYear .
 
-:The_Lady_of_the_Lake a  :Book,
-       owl:NamedIndividual ;
-       rdfs:label "The Lady of the Lake"@en ;
-    :hasCharacter  :Cahir,
+:The_Lady_of_the_Lake a :Book,
+        owl:NamedIndividual ;
+    rdfs:label "The Lady of the Lake"@en ;
+    :hasCharacter :Cahir,
         :Calanthe,
         :Ciri,
         :Coën,
@@ -2304,20 +2297,20 @@
         :Yarpen_Zigrin,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasOrganisation  :Lodge_of_Sorceresses,
+    :hasOrganisation :Lodge_of_Sorceresses,
         :Mahakam_Volunteer_Army,
         :Redanian_Secret_Service,
         :School_of_the_Cat,
         :School_of_the_Griffin ;
     :releaseYear "1999"^^xsd:gYear .
 
-:Human a  :Race ;
+:Human a :Race ;
     rdfs:label "Human"@en .
 
-:Time_of_Contempt a  :Book,
-       owl:NamedIndividual ;
-       rdfs:label "Time of Contempt"@en ;
-    :hasCharacter  :Aplegatt,
+:Time_of_Contempt a :Book,
+        owl:NamedIndividual ;
+    rdfs:label "Time of Contempt"@en ;
+    :hasCharacter :Aplegatt,
         :Artaud_Terranova,
         :Cahir,
         :Calanthe,
@@ -2359,7 +2352,7 @@
         :Yarpen_Zigrin,
         :Yennefer,
         :Yennefer_of_Vengerberg ;
-    :hasOrganisation  :Aedirnian_Special_Forces,
+    :hasOrganisation :Aedirnian_Special_Forces,
         :Aedirnian_Special_Service,
         :Brotherhood_of_Sorcerers,
         :Chapter_of_the_Gift_and_the_Art,
@@ -2367,9 +2360,9 @@
         :Council_of_Wizards,
         :Kaedwenian_Secret_Service,
         :Redanian_Secret_Service,
-       <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang> ;
+        <http://www.semanticweb.org/220941/ontologies/2025/10/witcher/Skellen's_gang> ;
     :releaseYear "1995"^^xsd:gYear .
 
 :Character a owl:Class ;
-       rdfs:label "Character"@en .
+    rdfs:label "Character"@en .
 
